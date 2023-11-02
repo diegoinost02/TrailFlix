@@ -17,7 +17,8 @@ import { ErrorComponent } from './error/error.component';
   ],
   exports: [
     NavBarComponent,
-    FooterComponent
+    FooterComponent,
+    ErrorComponent
   ]
 })
 export class SharedModule { }
