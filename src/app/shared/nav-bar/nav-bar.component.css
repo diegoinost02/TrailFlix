@@ -1,14 +1,13 @@
 .navbar_brand{
     color: white;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 .navbar_options{
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
 }
 .navbar_options:hover{
     color: rgb(255, 0, 0);
-    font-size: 1.5rem;
 }
 .navbar_color
 {
@@ -20,7 +19,7 @@
 {
     color:rgb(255, 255, 255);
     border-radius: 0.5rem;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     border-color: white;
     border-width: 0.2rem;
 }
@@ -31,13 +30,23 @@
     background-color: white;
 }
 .input_color{
-    background-color: rgb(77, 77, 77);
+    background-color:black;
+    
     border-radius: 0.5rem;
-    border-color: white;
-    border-width: 0.2rem;
+    border: 0.1rem;
+    border-color: rgb(255, 255, 255);
+ 
+    color:white;
 }
 
 .input_color::placeholder{
 
     color: rgb(245, 245, 245);
+}
+
+.navbar_search
+{
+  display: flex;
+  flex-direction: column;
+  align-items: end;
 }
