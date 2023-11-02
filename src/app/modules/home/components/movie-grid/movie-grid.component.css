@@ -1,0 +1,43 @@
+#carouselHero .carousel-item img {
+  object-fit: cover;
+  object-position: center;
+  height: 20vh;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.card_movie {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 20px;
+  position: relative;
+  min-height: 200px;
+  min-width: 100px;
+}
+
+.card_title {
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  overflow: hidden;
+}
+
+.card_enlace {
+    text-decoration: none;
+  }
+
+  .card_enlace img {
+    border-radius: 0.5rem;
+  }
+  
+  .card_enlace:hover img {
+    transform: scale(1.05);
+    transition:  0.2s  ease-in-out ;
+  }
+  
+  .color_text{
+    color: white;
+    font-size: 1.5rem;
+}

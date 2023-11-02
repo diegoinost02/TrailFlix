@@ -1,0 +1,43 @@
+.navbar_brand{
+    color: white;
+    font-size: 2rem;
+}
+.navbar_options{
+    color: white;
+    font-size: 1.5rem;
+}
+.navbar_options:hover{
+    color: rgb(255, 0, 0);
+    font-size: 1.5rem;
+}
+.navbar_color
+{
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+.button_color
+{
+    color:rgb(255, 255, 255);
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    border-color: white;
+    border-width: 0.2rem;
+}
+.button_color:hover
+{
+    color: rgb(48, 48, 48);
+   
+    background-color: white;
+}
+.input_color{
+    background-color: rgb(77, 77, 77);
+    border-radius: 0.5rem;
+    border-color: white;
+    border-width: 0.2rem;
+}
+
+.input_color::placeholder{
+
+    color: rgb(245, 245, 245);
+}
