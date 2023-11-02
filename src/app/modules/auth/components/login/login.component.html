@@ -1,1 +1,41 @@
-<p>login works!</p>
+<app-nav-bar></app-nav-bar>
+
+<div class="login-container">
+
+    <div class="main">
+
+        <form class="form" [formGroup]="formUser">
+
+            <h2>Inicia Sesión</h2>
+
+            <div class="field">
+                <label for="email"> Email </label>
+                <input type="email" formControlName="email" placeholder="Ingrese su email">
+
+                <div class="alerta" [hidden]="getEmail.valid || getEmail.pristine">
+                    El email es obligatorio
+                </div>
+
+            </div>
+            <div class="field">
+                <label for=""> Contraseña </label>
+                <input type="password" formControlName="password" placeholder="Ingrese su contraseña">
+
+                <div class="alerta" [hidden]="getPassword.valid || getPassword.pristine">
+                    La contraseña es obligatioria
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button class="btn"> Iniciar Sesion </button>
+                <button class="btn"> Registrarse </button>
+            </div>
+        </form>
+
+        <div>
+            <img class="img-main" src="../../../../../assets/images/TrailFlix.jpg" alt="">
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>
