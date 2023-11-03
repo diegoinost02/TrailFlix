@@ -1,7 +1,7 @@
 <div class="login-container">
 
     <div class="main">
-        <form class="form" [formGroup]="formUser">
+        <form class="form" [formGroup]="formUser" (ngSubmit)="register()">
 
             <h2>Registrarse</h2>
 
@@ -42,7 +42,7 @@
             </div>
 
             <div class="conditions">
-                <label for=""> Aceptar los términos y condiciones: </label>
+                <label for=""> Aceptar los <span> <a href=""> términos y  condiciones</a> </span>: </label>
 
                 <div class="checkbox">
                     <label for="condiciones">Sí, he leído y acepto</label>
@@ -51,8 +51,8 @@
             </div>
 
             <div class="buttons">
-                <button class="btn"> Registrarse </button>
-                <button class="btn"> Iniciar sesión </button>
+                <button type="submit" class="btn"> Registrarse </button>
+                <button (click)="goToLogin()" class="btn"> Iniciar sesión </button>
             </div>
         </form>
 

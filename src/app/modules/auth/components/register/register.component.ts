@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { User } from 'src/app/core/Models';
+import { UsersService } from 'src/app/core/services/users.service';
 
 @Component({
   selector: 'app-register',
@@ -9,7 +11,8 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent {
 
-  constructor(private router: Router, private formBuilder: FormBuilder){}
+  user: User = new User();
+  constructor(private router: Router, private formBuilder: FormBuilder, private usersService: UsersService){}
 
   formUser = this.formBuilder.group({
     'name': ['',Validators.required],
@@ -35,4 +38,60 @@ export class RegisterComponent {
     return this.formUser.get('conditions') as FormControl;
   }
 
+  goToLogin(){
+      this.router.navigate(['/auth/login']);
+  }
+
+  register(){
+    if(this.formUser.valid){
+      if(this.formUser.value.password === this.formUser.value.passwordConfirmation){
+
+        this.cargarValores();
+        this.checkAccount();
+      }
+      else{
+        console.log("Contraseñas distinas") //agregar logica
+      }
+    }
+  }
+  cargarValores(){
+    this.user.userName = this.formUser.value.name!;
+    this.user.email = this.formUser.value.email!;
+    this.user.password = this.formUser.value.password!;
+  }
+
+  checkAccount(){
+    this.usersService.getToCheck(this.user).subscribe({
+
+      next: (user: User[]) => {
+
+        if(user.length > 0){
+          console.log("User ya registrado")
+        }
+        else{
+          this.createAccount(this.user);
+        }
+      },
+      error: (error: any) => {
+        console.log(error);
+      }
+    })
+  }
+
+  createAccount(user:User){
+
+    this.usersService.addUser(user).subscribe({
+
+      next: (user: User) => {
+
+        console.log("User creado")
+        this.router.navigate(['/home'])
+      },
+      error: (error: any) => {
+
+        console.log(error)
+      }
+    })
+  }
 }
+

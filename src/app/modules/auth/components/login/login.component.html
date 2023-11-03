@@ -2,7 +2,7 @@
 
     <div class="main">
 
-        <form class="form" [formGroup]="formUser">
+        <form class="form" [formGroup]="formUser" (ngSubmit)="login()">
 
             <h2>Iniciar Sesión</h2>
 
@@ -25,8 +25,8 @@
             </div>
 
             <div class="buttons">
-                <button class="btn"> Iniciar Sesion </button>
-                <button class="btn"> Registrarse </button>
+                <button type="submit" class="btn"> Iniciar Sesion </button>
+                <button (click)="goToRegister()" class="btn"> Registrarse </button>
             </div>
         </form>
 
@@ -34,6 +34,7 @@
             <img class="img-main" src="../../../../../assets/images/TrailFlix.jpg" alt="">
         </div>
     </div>
+
 </div>
 
 <!-- <app-footer></app-footer> -->

@@ -1,0 +1,15 @@
+import { IUser } from "./Interfaces";
+
+export class User implements IUser {
+    id?: number | null = null;
+    userName?: string = '';
+    email: string = '';
+    password: string = '';
+
+    constructor(user?: any) {
+        this.id = user == undefined ? null : user.id;
+        this.userName = user == undefined ? '' : user.userName;
+        this.email = user == undefined ? '' : user.email;
+        this.password = user == undefined ? '' : user.password;
+    }
+}
