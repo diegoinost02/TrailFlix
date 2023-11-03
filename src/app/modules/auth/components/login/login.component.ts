@@ -36,6 +36,9 @@ export class LoginComponent {
       await this.cargarValores();
       this.verificar();
     }
+    else{
+      alert("Debe completar todos los campos");
+    }
   }
   cargarValores(){
     this.user.email = this.formUser.value.email!;
@@ -51,6 +54,7 @@ export class LoginComponent {
         }
         else {
           console.log("User no verificado");
+          alert("Email o contraseña incorrectos")
         }
       },
       error: (error: any) => {

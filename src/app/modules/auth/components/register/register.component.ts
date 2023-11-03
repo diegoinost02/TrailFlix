@@ -50,10 +50,15 @@ export class RegisterComponent {
         this.checkAccount();
       }
       else{
-        console.log("Contraseñas distinas") //agregar logica
+        alert("Las contraseñas deben ser iguales")
+        console.log("Contraseñas distinas"); //agregar logica
       }
     }
+    else{
+      alert("Debe completar todos los campos");
+    }
   }
+
   cargarValores(){
     this.user.userName = this.formUser.value.name!;
     this.user.email = this.formUser.value.email!;
@@ -66,6 +71,8 @@ export class RegisterComponent {
       next: (user: User[]) => {
 
         if(user.length > 0){
+
+          alert("El mail ya esta en uso")
           console.log("User ya registrado")
         }
         else{
@@ -88,7 +95,6 @@ export class RegisterComponent {
         this.router.navigate(['/home'])
       },
       error: (error: any) => {
-
         console.log(error)
       }
     })
