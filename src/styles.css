@@ -2,7 +2,7 @@
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 body{
     background: rgb(22,0,0);
-    background: linear-gradient(90deg, rgba(22,0,0,1) 0%, rgba(130,0,0,1) 50%, rgba(22,0,0,1) 100%);
+    background: linear-gradient(90deg, rgba(22,0,0,1) 0%, rgb(219, 4, 4) 50%, rgba(22,0,0,1) 100%);
    font-family: 'Noto Sans Kawi', sans-serif;
     font-family: 'Raleway', sans-serif;
 } 
