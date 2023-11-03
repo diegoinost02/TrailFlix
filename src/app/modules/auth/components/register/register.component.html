@@ -1,3 +1,65 @@
+<div class="login-container">
 
+    <div class="main">
+        <form class="form" [formGroup]="formUser">
 
-<app-footer></app-footer>
+            <h2>Registrarse</h2>
+
+            <div class="field">
+                <label for=""> Nombre de usuario </label>
+                <input type="text" formControlName="name" placeholder="Ingrese un nombre">
+
+                <div class="alerta" [hidden]="getName.valid || getName.pristine">
+                    El usuario es obligatiorio
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="email"> Email </label>
+                <input type="email" formControlName="email" placeholder="Ingrese su email">
+
+                <div class="alerta" [hidden]="getEmail.valid || getEmail.pristine">
+                    El email es obligatorio
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="password"> Contraseña </label>
+                <input type="password" formControlName="password" placeholder="Ingrese su contraseña">
+
+                <div class="alerta" [hidden]="getPassword.valid || getPassword.pristine">
+                    La contraseña es obligatioria
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="passwordConfirmation"> Confirmar contraseña </label>
+                <input type="password" formControlName="passwordConfirmation" placeholder="Ingrese su contraseña">
+
+                <div class="alerta" [hidden]="getPasswordConfirmation.valid || getPasswordConfirmation.pristine">
+                    La contraseña es obligatioria
+                </div>
+            </div>
+
+            <div class="conditions">
+                <label for=""> Aceptar los términos y condiciones: </label>
+
+                <div class="checkbox">
+                    <label for="condiciones">Sí, he leído y acepto</label>
+                    <input type="checkbox" formControlName="conditions">
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button class="btn"> Registrarse </button>
+                <button class="btn"> Iniciar sesión </button>
+            </div>
+        </form>
+
+        <div class="contenedor-img">
+            <img class="img-main" src="../../../../../assets/images/TrailFlix.jpg" alt="">
+        </div>
+    </div>
+</div>
+
+<!-- <app-footer></app-footer> -->
