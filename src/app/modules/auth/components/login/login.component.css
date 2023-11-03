@@ -69,3 +69,22 @@ input{
 ::placeholder{
     color: rgb(165, 165, 165);
 }
+
+@media screen and (max-width: 920px) {
+    .main {
+        flex-direction: column;
+    }
+    .form {
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        border-bottom-left-radius: 0;
+    }
+    .img-main{
+        min-width: 100%;
+        max-height: 230px;
+        object-fit: cover;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 30px;
+        border-bottom-left-radius: 30px;
+    }
+}
