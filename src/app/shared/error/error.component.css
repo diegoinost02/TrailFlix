@@ -1,8 +1,11 @@
-
 .text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
   background-color: rgba(0, 0, 0, 0.4);
   padding: 10px;
-  margin-right: 10%;
   font-size: 25px;
   border-radius: 5px;
 }
@@ -17,17 +20,4 @@
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
-     z-index: -1;
-}
-.overlay {
-  min-height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
