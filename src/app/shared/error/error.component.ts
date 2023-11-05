@@ -10,7 +10,7 @@ export class ErrorComponent {
   route = window.location.pathname;
   maxCharacters = 20;
 
-  get truncatedRoute() {
+  get routeNotFound() {
     const route = this.route.slice(0, this.maxCharacters);
     if (this.route.length > this.maxCharacters) {
       return `${route}...`;
