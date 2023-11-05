@@ -1,7 +1,7 @@
-#carouselHero .carousel-item img {
+.carousel .carousel-item img {
   object-fit: cover;
-  object-position: center;
-  height: 20vh;
+  object-position:center;
+  height: 40vh;
   overflow: hidden;
   border-radius: 1.5rem;
 }
