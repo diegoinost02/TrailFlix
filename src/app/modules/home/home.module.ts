@@ -5,6 +5,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { PageComponent } from './components/page/page.component';
 import { MovieGridComponent } from './components/movie-grid/movie-grid.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 
 @NgModule({
@@ -15,7 +16,9 @@ import { SharedModule } from 'src/app/shared/shared.module';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    SharedModule
+    SharedModule,
+    InfiniteScrollModule
+
   ]
 })
 export class HomeModule { }

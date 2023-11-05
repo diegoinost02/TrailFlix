@@ -6,12 +6,10 @@ import { MoviesService } from 'src/app/core/services/movies.service';
   templateUrl: './movie-grid.component.html',
   styleUrls: ['./movie-grid.component.css']
 })
-export class MovieGridComponent implements OnInit,AfterViewInit {
+export class MovieGridComponent implements OnInit {
 
   constructor(private movieSer:MoviesService) {}
-  ngAfterViewInit(): void {
-    
-  }
+  
  
   ngOnInit(): void {
    
@@ -22,8 +20,7 @@ export class MovieGridComponent implements OnInit,AfterViewInit {
   
     movies:any = [];
     banner:any = [];
-
-   
+    
   getMovies()
   {
     this.movieSer.getPeliculas().subscribe(movies=>{
@@ -31,6 +28,15 @@ export class MovieGridComponent implements OnInit,AfterViewInit {
       console.log(this.movies);
     })
   }
+
+  appendMovies()
+  {
+    this.movieSer.getPeliculas().subscribe(movies=>{
+      this.movies = [...this.movies,...movies]
+      console.log(this.movies);
+    })
+  }
+
 
   getBanner()
   {
@@ -40,6 +46,14 @@ export class MovieGridComponent implements OnInit,AfterViewInit {
     })
   }
 
+  onScrollDown() {
+    console.log("scrolled down!!");
 
+
+  }
+
+  onScrollUp() {
+    console.log("scrolled up!!");
+  }
 
 }
