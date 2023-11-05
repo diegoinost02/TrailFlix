@@ -37,8 +37,8 @@ export class UsersService {
     localStorage.setItem('token', token)
   }
 
-  public getUserById(id: number): Observable<User[]> {
-    return this.http.get<User[]>(`${this.baseUrl}/Users?id=${id}`)
+  public getUserById(id: number): Observable<User> {
+    return this.http.get<User>(`${this.baseUrl}/Users?id=${id}`)
   }
 
   public verifyToken(token: string) {
@@ -51,7 +51,7 @@ export class UsersService {
       return null;
     }
   }
-  public getCurrentUser(): Observable<User[]> | null {
+  public getCurrentUser(): Observable<User> | null {
     const token = localStorage.getItem('token');
     if (token) {
       return this.verifyToken(token);
@@ -61,17 +61,19 @@ export class UsersService {
   }
   public logout() {
     localStorage.removeItem('token')
-    // this.setCurrentUser(null);
     this.router.navigate(['']);
   }
 }
 
 //ejemplo del home
-//
 // user: User = new User();
-// ngOnInit() {
+
+// ngOnInit(): void {
 //   const user = this.usersService.getCurrentUser();
-//   if (user) {
-//     this.user = user;
+//   if(user) {
+//     user.subscribe((user: User) => {
+//       this.user = user;
+//       console.log("user del token:" + JSON.stringify(this.user))
+//     })
 //   }
 // }
