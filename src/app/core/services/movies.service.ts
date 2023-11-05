@@ -7,6 +7,7 @@ import { Movie, PeliculasResponse } from '../InterfaceMovies';
   providedIn: 'root',
 })
 export class MoviesService {
+  
   private baseURL: string = 'https://api.themoviedb.org/3';
   private PageNPlaying = 1;
   private PagePopular = 1;
@@ -44,6 +45,7 @@ export class MoviesService {
        this.cargando=true;
 
        return this.http.get<PeliculasResponse>(`${this.baseURL}/movie/now_playing`,{params:this.paramsNPlaying}).pipe(
+    
          map((res)=>res.results),
          tap(()=>{
            this.PageNPlaying+=1;
@@ -59,7 +61,7 @@ export class MoviesService {
       }
          this.cargandoPopular=true;
   
-         return this.http.get<PeliculasResponse>(`${this.baseURL}/movie/popular`,{params:this.paramsNPlaying}).pipe(
+         return this.http.get<PeliculasResponse>(`${this.baseURL}/movie/popular`,{params:this.paramsPopular}).pipe(
            map((res)=>res.results),
            tap(()=>{
              this.PagePopular+=1;

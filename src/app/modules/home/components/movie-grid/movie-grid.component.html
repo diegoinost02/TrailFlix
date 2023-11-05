@@ -2,8 +2,8 @@
 <div class="container" 
 
 infiniteScroll
-[infiniteScrollDistance]="1"
-[infiniteScrollThrottle]="2000"
+[infiniteScrollDistance]="2"
+[infiniteScrollThrottle]="1000"
 (scrolled)="appendMovies()"
 
 >
@@ -48,7 +48,7 @@ infiniteScroll
     
     <br>
     <br>
-    <div class="col-6 col-sm-4 col-lg-3 col-xl-2 g-3" *ngFor="let movie of movies">
+    <div class="col-6 col-sm-4 col-lg-3 col-xl-3 g-4" *ngFor="let movie of movies">
         <div class="card__movie">
             <a href="#" class="card_enlace">
                 

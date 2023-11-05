@@ -16,14 +16,15 @@ export class MovieGridComponent implements OnInit {
   this.getMovies();
   this.getBanner();
   }
-
-  
     movies:any = [];
     banner:any = [];
+  
     
+
+
   getMovies()
   {
-    this.movieSer.getPeliculas().subscribe(movies=>{
+    this.movieSer.getPeliculasTrendig().subscribe(movies=>{
       this.movies = movies;
       console.log(this.movies);
     })
@@ -31,7 +32,7 @@ export class MovieGridComponent implements OnInit {
 
   appendMovies()
   {
-    this.movieSer.getPeliculas().subscribe(movies=>{
+    this.movieSer.getPeliculasTrendig().subscribe(movies=>{
       this.movies = [...this.movies,...movies]
       console.log(this.movies);
     })
@@ -40,20 +41,9 @@ export class MovieGridComponent implements OnInit {
 
   getBanner()
   {
-    this.movieSer.getPeliculasTrendig().subscribe(movies=>{
+    this.movieSer.getPeliculas().subscribe(movies=>{
       this.banner = movies;
       console.log(this.banner);
     })
   }
-
-  onScrollDown() {
-    console.log("scrolled down!!");
-
-
-  }
-
-  onScrollUp() {
-    console.log("scrolled up!!");
-  }
-
 }
