@@ -10,6 +10,7 @@ export class PipeUrlService {
 
   transform(url: any) {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url); ///Hace que sea segura la url
+    ///para evitar problemas al inyectar una url en un iframe
   }
 
 
