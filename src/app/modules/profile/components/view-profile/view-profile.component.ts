@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from 'src/app/core/Models';
 import { UsersService } from 'src/app/core/services/users.service';
 
@@ -10,7 +11,7 @@ import { UsersService } from 'src/app/core/services/users.service';
 export class ViewProfileComponent implements OnInit{
 
   
-  constructor(private usersService: UsersService) { }
+  constructor(private usersService: UsersService, private router: Router) { }
 
   user: User = new User();
   markedPassword: string = '';
@@ -30,5 +31,10 @@ export class ViewProfileComponent implements OnInit{
         console.log("user del token:" + JSON.stringify(this.user))
       })
     }
+  }
+
+  logOut(){
+    this.usersService.logout();
+    this.router.navigate(['']);
   }
 }

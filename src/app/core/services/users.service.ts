@@ -23,8 +23,8 @@ export class UsersService {
     return this.http.get<User[]>(`${this.baseUrl}/Users?email=${user.email}`)
   }
 
-  public addUser(user: User): Observable<User> {
-    return this.http.post<User>(`${this.baseUrl}/Users`, user)
+  public addUser(user: User): Observable<User[]> {
+    return this.http.post<User[]>(`${this.baseUrl}/Users`, user)
   }
 
   //funciones para token de autenticación
