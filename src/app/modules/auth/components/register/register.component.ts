@@ -12,10 +12,10 @@ import { UsersService } from 'src/app/core/services/users.service';
 export class RegisterComponent {
 
   user: User = new User();
-  constructor(private router: Router, private formBuilder: FormBuilder, private usersService: UsersService){}
+  constructor(private router: Router, private formBuilder: FormBuilder, private usersService: UsersService) { }
 
   formUser = this.formBuilder.group({
-    'name': ['',Validators.required],
+    'name': ['', Validators.required],
     'email': ['', Validators.required], //,Validators.email],
     'password': ['', Validators.required],
     'passwordConfirmation': ['', Validators.required],
@@ -38,44 +38,45 @@ export class RegisterComponent {
     return this.formUser.get('conditions') as FormControl;
   }
 
-  goToLogin(){
-      this.router.navigate(['/auth/login']);
+  goToLogin() {
+    this.router.navigate(['/auth/login']);
   }
 
-  register(){
-    if(this.formUser.valid){
-      if(this.formUser.value.password === this.formUser.value.passwordConfirmation){
+  register() {
+    if (this.formUser.valid) {
+      if (this.formUser.value.password === this.formUser.value.passwordConfirmation) {
 
         this.cargarValores();
         this.checkAccount();
       }
-      else{
+      else {
         alert("Las contraseñas deben ser iguales")
         console.log("Contraseñas distinas"); //agregar logica
       }
     }
-    else{
+    else {
       alert("Debe completar todos los campos");
     }
   }
 
-  cargarValores(){
+  cargarValores() {
     this.user.userName = this.formUser.value.name!;
     this.user.email = this.formUser.value.email!;
     this.user.password = this.formUser.value.password!;
+    this.user.isSubscribed = true;
   }
 
-  checkAccount(){
+  checkAccount() {
     this.usersService.getToCheck(this.user).subscribe({
 
       next: (user: User[]) => {
 
-        if(user.length > 0){
+        if (user.length > 0) {
 
           alert("El mail ya esta en uso")
           console.log("User ya registrado")
         }
-        else{
+        else {
           this.createAccount(this.user);
         }
       },
@@ -85,13 +86,16 @@ export class RegisterComponent {
     })
   }
 
-  createAccount(user:User){
+  createAccount(user: User) {
 
     this.usersService.addUser(user).subscribe({
 
-      next: (user: User) => {
+      next: (users: User[]) => {
 
         console.log("User creado")
+        const token = this.usersService.generateToken(users[0]);
+        this.usersService.setCurrentUser(token);
+
         this.router.navigate(['/home'])
       },
       error: (error: any) => {

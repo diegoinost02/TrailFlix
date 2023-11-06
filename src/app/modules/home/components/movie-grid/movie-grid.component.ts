@@ -14,16 +14,15 @@ export class MovieGridComponent implements OnInit {
 
   constructor(private movieSer:MoviesService,private dialog:MatDialog) {}
   
- 
+
   ngOnInit(): void {
-   
+
   this.getMovies();
   this.getBanner();
   }
     movies:any = [];
     banner:any = [];
   
-    
 
 
   getMovies()

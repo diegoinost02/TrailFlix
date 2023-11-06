@@ -1,0 +1,50 @@
+<div class="profile-container">
+
+    <div class="info-container">
+
+        <h3>Cuenta</h3>
+
+        <div class="field">
+            <div class="date">
+                <span class="field-label">Usuario</span>
+                <i class="bi bi-pencil-square" (click)="editUserName()"></i>
+            </div>
+            <span class="field-value">{{user.userName}}</span>
+        </div>
+
+        <div class="field">
+            <div class="date">
+                <span class="field-label">Email</span>
+                <i class="bi bi-pencil-square" (click)="editEmail()"></i>
+            </div>
+            <span class="field-value">{{user.email}}</span>
+        </div>
+
+        <div class="field">
+            <div class="date">
+                <span class="field-label">Contraseña</span>
+                <i class="bi bi-pencil-square" (click)="editPassword()"></i>
+            </div>
+            <span class="field-value">{{markedPassword}}</span>
+        </div>
+
+        <h3>Subscripción</h3>
+
+        <div class="field">
+            <div class="date">
+                <span class="field-label">Plan</span>
+                <i class="bi bi-arrow-up-right-square" (click)="subscriptionDate()"></i>
+            </div>
+            <div [ngSwitch]="user.isSubscribed" *ngIf="user.isSubscribed">
+                <span *ngSwitchCase="true" class="field-value">Contenido disponible</span>
+                <span *ngSwitchCase="false" class="field-value">Contenido no disponible</span>
+            </div>
+        </div>
+
+        <h3>Sesión</h3>
+        <div class="field">
+            <button (click)="logOut()" class="btn">Cerrar Sesión</button>
+        </div>
+    </div>
+
+</div>
