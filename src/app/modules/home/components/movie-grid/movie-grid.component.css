@@ -49,4 +49,7 @@
   color:rgb(224, 223, 223);
 
 }
-
+.background-dialog {
+  background-color: #bbbbbbf2;
+  backdrop-filter: blur(4px);
+}
