@@ -1,19 +1,51 @@
 <div class="profile-container">
-    <h2>Mis Datos</h2>
-    <table class="table">
-        <thead class="date">
-            <th>Nombre de usuario</th>
-            <th>Email</th>
-            <th>Contraseña</th>
-            <th>Subscripción</th>
-        </thead>
-        <tbody class="date">
-            <tr class="tr">
-                <td >{{user.userName}}</td>
-                <td>{{user.email}}</td>
-                <td>{{user.password}}</td>
-                <td>{{user.isSubscribed}}</td>
-            </tr>
-        </tbody>
-    </table>
+
+    <div class="info-container">
+
+        <h3>Cuenta</h3>
+
+        <div class="field">
+            <div class="date">
+                <span class="field-label">Usuario</span>
+                <i class="bi bi-pencil-square"></i>
+            </div>
+            <span class="field-value">{{user.userName}}</span>
+        </div>
+
+        <div class="field">
+            <div class="date">
+                <span class="field-label">Email</span>
+                <i class="bi bi-pencil-square"></i>
+            </div>
+            <span class="field-value">{{user.email}}</span>
+        </div>
+
+        <div class="field">
+            <div class="date">
+                <span class="field-label">Contraseña</span>
+                <i class="bi bi-pencil-square"></i>
+            </div>
+            <span class="field-value">{{markedPassword}}</span>
+        </div>
+
+        <h3>Subscripcion</h3>
+
+        <div class="field">
+            <div class="date">
+                <span class="field-label">Subscripción</span>
+                <i class="bi bi-arrow-up-right-square"></i>
+            </div>
+
+            <div [ngSwitch]="user.isSubscribed" *ngIf="user.isSubscribed">
+                <span *ngSwitchCase="true" class="field-value">Contenido disponible</span>
+                <span *ngSwitchCase="false" class="field-value">Contenido no disponible</span>
+            </div>
+        </div>
+
+        <h3>Sesión</h3>
+        <div class="field">
+            <button class="btn">Cerrar Sesión</button>
+        </div>
+    </div>
+
 </div>
