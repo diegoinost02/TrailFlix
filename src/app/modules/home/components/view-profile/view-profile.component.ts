@@ -33,7 +33,9 @@ export class ViewProfileComponent implements OnInit{
     }
   }
 
-  editUserName(){}
+  editUserName(){
+    console.log("si")
+  }
   editEmail(){}
   editPassword(){}
   subscriptionDate(){}
