@@ -17,7 +17,7 @@ infiniteScroll
         <div class="carousel-caption d-none d-md-block">
 
           <h5 class="banner_text" >{{ movie.title }}</h5>
-          <p class="banner_text">{{ movie.overview |  slice: 0:130 }}</p>
+          <p class="banner_text">{{ movie.overview }}</p>
 
         </div>
       </div>
@@ -28,10 +28,10 @@ infiniteScroll
   <div class="row justify-content-md-center mt-4">
     <div class="col-12 mb color_text"> Tus favoritos </div>
     <div class="row justify-content-md-center mt-4" >
-        <div class="col-6 col-sm-4 col-lg-3 col-xl-2 g-3 ">
+        <div class="col-6 col-sm-4 col-lg-3 col-xl-3 g-4 ">
             <div class="card__movie">
 
-                <a href="" class="card_enlace">
+                <a  class="card_enlace">
     
                     <img src="https://image.tmdb.org/t/p/w500/A4j8S6moJS2zNtRR8oWF08gRnL5.jpg" alt="" class="img-fluid">
 
@@ -50,7 +50,7 @@ infiniteScroll
     <br>
     <div class="col-6 col-sm-4 col-lg-3 col-xl-3 g-4" *ngFor="let movie of movies">
         <div class="card__movie">
-            <a href="#" class="card_enlace">
+            <a (click)="dialoMovieDetails(movie)" class="card_enlace">
                 
                 <img src="{{ 'https://image.tmdb.org/t/p/w500' + movie.poster_path}}" alt="" class="img-fluid">
             

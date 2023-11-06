@@ -1,5 +1,9 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MoviesService } from 'src/app/core/services/movies.service';
+import { MovieDetailsComponent } from '../movie-details/movie-details.component';
+import { Movie } from 'src/app/core/InterfaceMovies';
+import { NoopScrollStrategy } from '@angular/cdk/overlay';
 
 @Component({
   selector: 'app-movie-grid',
@@ -8,7 +12,7 @@ import { MoviesService } from 'src/app/core/services/movies.service';
 })
 export class MovieGridComponent implements OnInit {
 
-  constructor(private movieSer:MoviesService) {}
+  constructor(private movieSer:MoviesService,private dialog:MatDialog) {}
   
 
   ngOnInit(): void {
@@ -45,4 +49,20 @@ export class MovieGridComponent implements OnInit {
       console.log(this.banner);
     })
   }
+
+  dialoMovieDetails(movie:Movie)
+  {
+    
+    const dialogRef = this.dialog.open(MovieDetailsComponent,{
+
+    
+      width: "70%",
+      height: "90%",
+      data:movie,
+      backdropClass:'background-dialog',
+   
+    });
+
+  }
+
 }
