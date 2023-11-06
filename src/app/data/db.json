@@ -4,13 +4,15 @@
       "id": 1,
       "userName": "diego",
       "email": "diego@gmail.com",
-      "password": "diegoinostroza123"
+      "password": "diegoinostroza123",
+      "isSubscribed": true
     },
     {
       "id": 2,
       "userName": "juan",
       "email": "juan@gmail.com",
-      "password": "juantretta123"
+      "password": "juantretta123",
+      "isSubscribed": true
     }
   ]
 }

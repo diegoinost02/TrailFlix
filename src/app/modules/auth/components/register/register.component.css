@@ -1,8 +1,8 @@
-.login-container {
-    margin: 5%;
+.register-container {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    min-height: 100vh;
 }
 .main{
     display: flex;
@@ -76,6 +76,9 @@ input{
 }
 
 @media screen and (max-width: 920px) {
+    .register-container {
+        margin-top: 10px;
+    }
     .main {
         flex-direction: column;
        
