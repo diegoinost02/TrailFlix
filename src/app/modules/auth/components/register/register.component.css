@@ -6,7 +6,7 @@
 }
 .main{
     display: flex;
-    border-radius: 30px;
+    /* border-radius: 30px; */
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   
 }
@@ -15,15 +15,15 @@
     padding: 40px;
     display: inline-block;
     background-color: rgb(18, 18, 18);
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
+    /* border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px; */
 }
 .img-main{
     height: 100%;
     max-width: 500px;
     object-fit: cover;
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
+    /* border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px; */
 }
 
 .field {
@@ -85,15 +85,15 @@ input{
         .img-main{
             width: 480px;
             height: 250px;
-            border-top-right-radius: 0;
+            /* border-top-right-radius: 0;
             border-bottom-right-radius: 30px;
-            border-bottom-left-radius: 30px;
+            border-bottom-left-radius: 30px; */
         }
     }
     .form {
-        border-top-left-radius: 30px;
+        /* border-top-left-radius: 30px;
         border-top-right-radius: 30px;
-        border-bottom-left-radius: 0;
+        border-bottom-left-radius: 0; */
         .field{
             width: 92%;
         }
@@ -107,15 +107,15 @@ input{
         .img-main{
             width: 370px;
             height: 230px;
-            border-top-right-radius: 0;
+            /* border-top-right-radius: 0;
             border-bottom-right-radius: 30px;
-            border-bottom-left-radius: 30px;
+            border-bottom-left-radius: 30px; */
         }
     }
     .form {
-        border-top-left-radius: 30px;
+        /* border-top-left-radius: 30px;
         border-top-right-radius: 30px;
-        border-bottom-left-radius: 0;
+        border-bottom-left-radius: 0; */
         .field{
             width: 92%;
         }

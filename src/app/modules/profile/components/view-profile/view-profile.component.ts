@@ -25,7 +25,6 @@ export class ViewProfileComponent implements OnInit{
     const user = this.usersService.getCurrentUser();
     if (user) {
       user.subscribe((user: User[]) => {
-
         this.user = user[0];
         this.markedPassword = '*'.repeat(this.user.password.length)
         console.log("user del token:" + JSON.stringify(this.user))
