@@ -12,7 +12,7 @@ infiniteScroll
     <div class="carousel-inner">
       <div *ngFor="let movie of banner; let i = index" class="carousel-item" [ngClass]="{'active': i === 0}">
 
-        <img src="{{ 'https://image.tmdb.org/t/p/original' + movie.backdrop_path}}" alt="" class="d-block w-100">
+        <img src="{{ 'https://image.tmdb.org/t/p/original' + movie.backdrop_path}}" alt="" class="d-block w-100 banner_img">
 
         <div class="carousel-caption d-none d-md-block">
 

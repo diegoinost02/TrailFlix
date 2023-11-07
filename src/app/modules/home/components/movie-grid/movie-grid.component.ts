@@ -22,6 +22,7 @@ export class MovieGridComponent implements OnInit {
   }
     movies:any = [];
     banner:any = [];
+    favMovies:any = [];
   
 
 
@@ -41,13 +42,17 @@ export class MovieGridComponent implements OnInit {
     })
   }
 
-
   getBanner()
   {
     this.movieSer.getPeliculas().subscribe(movies=>{
       this.banner = movies;
       console.log(this.banner);
     })
+  }
+
+  getFavMovies()
+  {
+    
   }
 
   dialoMovieDetails(movie:Movie)
