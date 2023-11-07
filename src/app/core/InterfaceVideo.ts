@@ -2,7 +2,6 @@ export interface Videos {
     id: number;
     results: Video[];
   }
-
   
   export interface Video {
     iso_639_1: string;

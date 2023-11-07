@@ -24,7 +24,6 @@ export class MovieDetailsComponent implements OnInit {
 
 
  
-
   videosArray:any = [];
 
   videoKey:any = [];
@@ -55,7 +54,6 @@ export class MovieDetailsComponent implements OnInit {
 
   }
   
-
   
 
 }

@@ -50,3 +50,6 @@
   flex-direction: column;
   align-items: end;
 }
+a{
+    cursor:pointer;
+}
