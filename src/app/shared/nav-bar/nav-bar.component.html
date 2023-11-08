@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark navbar_color mb-3">
   <div class="container-fluid">
-    <a class="navbar-brand navbar_brand" href="#"> <span style="color: red;font-weight: 600;">TRAIL</span>FLIX </a>
+    <a class="navbar-brand navbar_brand" (click)="goToHome()"> <span style="color: red;font-weight: 600;">TRAIL</span>FLIX </a>
 
     <button
       style="color: rgb(110, 110, 110)"
@@ -32,15 +32,15 @@
       </ul>
 
       <div class="navbar_search"> 
-        <form class="d-flex">
+        <form class="row">
         <input
-          class="me-2 input_color"
+          class="me-2 col input_color"
           type="text"
           placeholder="Buscar"
           data-ms-editor="true"
-          style="width: 350px;"
+          style="width: 100%;"
         />
-        <button class="btn button_color">Buscar</button>
+        <button class="btn button_color col-4 me-2">Buscar</button>
       </form>
     </div>
      

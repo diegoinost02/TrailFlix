@@ -5,3 +5,13 @@ export interface IUser {
     password: string;
     isSubscribed : boolean | null;
 }
+
+export interface IFav{
+
+    id?:number | null;
+    idUser?:number| null;
+    idMovie?:string;
+    linkPoster:string;
+    keyYoutube:string;
+    overview:string;
+}
