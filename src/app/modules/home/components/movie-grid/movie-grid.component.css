@@ -55,3 +55,7 @@
   background-color: #bbbbbbf2;
   backdrop-filter: blur(4px);
 }
+
+a{
+  cursor:pointer
+}

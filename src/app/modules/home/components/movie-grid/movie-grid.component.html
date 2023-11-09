@@ -1,60 +1,86 @@
-
-<div class="container" 
-
-infiniteScroll
-[infiniteScrollDistance]="2"
-[infiniteScrollThrottle]="1000"
-(scrolled)="appendMovies()"
+<div
+  class="container"
+  infiniteScroll
+  [infiniteScrollDistance]="2"
+  [infiniteScrollThrottle]="1000"
+  (scrolled)="appendMovies()"
 
 >
- <!-- BANNER -->
+  <!-- BANNER -->
   <div class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
-      <div *ngFor="let movie of banner; let i = index" class="carousel-item" [ngClass]="{'active': i === 0}">
-
-        <img src="{{ 'https://image.tmdb.org/t/p/original' + movie.backdrop_path}}" alt="" class="d-block w-100 banner_img">
+      <div
+        *ngFor="let movie of banner; let i = index"
+        class="carousel-item"
+        [ngClass]="{ active: i === 0 }"
+      >
+        <img
+          src="{{
+            'https://image.tmdb.org/t/p/w1280' + movie.backdrop_path
+          }}"
+          alt=""
+          class="d-block w-100 banner_img"
+        />
 
         <div class="carousel-caption d-none d-md-block">
-
-          <h5 class="banner_text" >{{ movie.title }}</h5>
+          <h5 class="banner_text">{{ movie.title }}</h5>
           <p class="banner_text">{{ movie.overview }}</p>
-
         </div>
       </div>
     </div>
   </div>
 
- <!-- FAVORITOS -->
+  <!-- FAVORITOS -->
   <div class="row justify-content-md-center mt-4">
-    <div class="col-12 mb color_text"> Tus favoritos </div>
-    <div class="row justify-content-md-center mt-4" >
-        <div class="col-6 col-sm-4 col-lg-3 col-xl-3 g-4 ">
-            <div class="card__movie">
+    <div class="col-12 mb color_text">Tus favoritos</div>
 
-                <a  class="card_enlace">
-    
-                    <img src="https://image.tmdb.org/t/p/w500/A4j8S6moJS2zNtRR8oWF08gRnL5.jpg" alt="" class="img-fluid">
-
-                </a>
-            </div>
+    <div class="row justify-content-md-center mt-4">
+      <div
+        class="col-6 col-sm-4 col-lg-3 col-xl-3 g-4"
+        *ngFor="let movie of favMovies"
+      >
+        <div class="card__movie">
+          <a class="card_enlace">
+            <img
+              loading="lazy"
+              src="{{ 'https://image.tmdb.org/t/p/w500' + movie.linkPoster }}"
+              alt=""
+              class="img-fluid"
+            />
+          </a>
         </div>
-
+      </div>
     </div>
-
 
     <!-- TRENDING -->
 
-    <div class="col-12 color_text"  >Trending Movies</div>
-    
-    <br>
-    <br>
-    <div class="col-6 col-sm-4 col-lg-3 col-xl-3 g-4" *ngFor="let movie of movies">
-        <div class="card__movie">
-            <a (click)="dialoMovieDetails(movie)" class="card_enlace">
-                
-                <img src="{{ 'https://image.tmdb.org/t/p/w500' + movie.poster_path}}" alt="" class="img-fluid">
-            
-            </a>
-        </div>
+    <div class="col-12 color_text">Trending Movies</div>
+
+    <br />
+    <br />
+    <div
+      class="col-6 col-sm-4 col-lg-3 col-xl-3 g-4"
+      *ngFor="let movie of movies"
+    >
+      <div class="card__movie">
+        <a (click)="dialoMovieDetails(movie)" class="card_enlace">
+          <img
+          *ngIf="movie.poster_path != null"
+          loading="lazy"
+          
+            src="{{ 'https://image.tmdb.org/t/p/w500' + movie.poster_path }}"
+            alt=""
+            class="img-fluid"
+          />
+          <img
+          *ngIf="movie.poster_path ===null"
+          loading="lazy"
+          src="../../../../../assets/images/No-Image-Placeholder.svg.png"
+          alt=""
+          class="img-fluid"
+        />
+        </a>
+      </div>
     </div>
+  </div>
 </div>

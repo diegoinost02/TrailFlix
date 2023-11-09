@@ -22,6 +22,10 @@ const routes: Routes = [
     loadChildren: () => import('./modules/profile/profile.module').then(m => m.ProfileModule)
   },
   {
+    path: 'search',
+    loadChildren: () => import('./modules/search/search.module').then(m => m.SearchModule)
+  },
+  {
     path: '**',
     component: ErrorComponent
   }
