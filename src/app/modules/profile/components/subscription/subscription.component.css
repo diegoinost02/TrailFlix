@@ -1,11 +1,26 @@
 .custom-dialog-title{
     color: white;
 }
-.container{
+.popup-container{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-.popup-container{
     background-color: rgb(51, 51, 51);
+    padding: 20px;
+}
+.main-container{
+    display: flex;
+    flex-direction: column;
+}
+.btn{
+    margin: 20px;
+    border: none;
+    border-radius: 3px;
+    background-color: rgb(78, 77, 77);
+    color: rgb(210, 207, 207);
+}
+.btn:hover {
+    color: rgb(236, 236, 236);
+    background-color: rgb(70, 70, 70);
 }

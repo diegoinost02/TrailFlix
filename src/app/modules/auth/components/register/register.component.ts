@@ -71,7 +71,7 @@ export class RegisterComponent {
         })
         dialogRef.afterClosed().subscribe(result => {
         })
-        console.log("Contraseñas distinas"); //agregar logica
+        console.log("Contraseñas distinas");
       }
     }
     else {

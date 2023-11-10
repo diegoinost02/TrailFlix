@@ -11,8 +11,6 @@ import { SubscriptionComponent } from '../subscription/subscription.component';
   styleUrls: ['./view-profile.component.css']
 })
 export class ViewProfileComponent implements OnInit{
-
-
   
   constructor(private usersService: UsersService, private router: Router, private dialog: MatDialog) { }
 

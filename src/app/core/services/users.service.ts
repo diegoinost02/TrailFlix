@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../Models';
-import { Observable } from 'rxjs';
+import { Observable, catchError, map, of, switchMap } from 'rxjs';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -65,12 +65,22 @@ export class UsersService {
     this.router.navigate(['']);
   }
 
-  //functions to get and edit user data
+  //functions to edit user
 
   public editUser(id: number, updateUser: User): Observable<boolean> {
     return this.http.put<boolean>(`${this.baseUrl}/Users/${id}`, updateUser)
   }
-  
+
+  public deleteUser(id: number): Observable<boolean>{
+    return this.http.delete(`${this.baseUrl}/Users/${id}`)
+    .pipe(
+      switchMap(resp => {
+        localStorage.removeItem('token')
+        return of(true);
+      }),
+    catchError(error => of(false))
+    );
+  }
 }
 
 //ejemplo de implementacion

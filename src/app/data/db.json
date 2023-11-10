@@ -1,17 +1,17 @@
 {
   "users": [
     {
-      "id": 1,
-      "userName": "diego",
-      "email": "diego@gmail.com",
-      "password": "diegoinostroza",
-      "isSubscribed": true
-    },
-    {
       "id": 2,
       "userName": "juan",
       "email": "juan@gmail.com",
       "password": "juantretta",
+      "isSubscribed": true
+    },
+    {
+      "id": 3,
+      "userName": "diego",
+      "email": "diego@gmail.com",
+      "password": "diegoinostroza",
       "isSubscribed": true
     }
   ],
