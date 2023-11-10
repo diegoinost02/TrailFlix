@@ -99,8 +99,8 @@ export class MovieGridComponent implements OnInit, OnDestroy {
 
   dialoMovieDetails(movie: Movie) {
     this.dialog.open(MovieDetailsComponent, {
-      width: '70%',
-      height: '90%',
+      width: '100%',
+      height: 'auto',
       data: movie,
       backdropClass: 'background-dialog',
     });
