@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { isNgTemplate } from '@angular/compiler';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 @Component({
@@ -6,8 +7,10 @@ import { Router } from '@angular/router';
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.css']
 })
-export class NavBarComponent {
+export class NavBarComponent implements OnInit {
   constructor( private formBuilder: FormBuilder, private router:Router){
+  }
+  ngOnInit(): void {
   }
 
   formSearch = this.formBuilder.group({
@@ -18,9 +21,13 @@ export class NavBarComponent {
   {
     if(this.formSearch.valid)
     {
-      const movie:string = this.formSearch.value.search!;
-      this.router.navigate(['/search/', movie]);
+      let movie:string = this.formSearch.value.search!;
+
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() =>
+    this.router.navigate(['/search',movie]));
     }
       
   }
+
+
 }
