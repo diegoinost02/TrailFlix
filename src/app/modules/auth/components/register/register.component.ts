@@ -67,7 +67,8 @@ export class RegisterComponent {
       }
       else {
         const dialogRef = this.dialog.open(AlertPopupComponent, {
-          data: this.dataAlertPassword, height: 'auto', width: '350px'
+          data: this.dataAlertPassword, height: 'auto', width: '350px',
+          backdropClass: "background-dialog"
         })
         dialogRef.afterClosed().subscribe(result => {
         })
@@ -76,7 +77,8 @@ export class RegisterComponent {
     }
     else {
       const dialogRef = this.dialog.open(AlertPopupComponent, {
-        data: this.dataAlertVerify, height: 'auto', width: '350px'
+        data: this.dataAlertVerify, height: 'auto', width: '350px',
+        backdropClass: "background-dialog"
       })
       dialogRef.afterClosed().subscribe(result => {
       })
@@ -98,7 +100,8 @@ export class RegisterComponent {
         if (user.length > 0) {
 
           const dialogRef = this.dialog.open(AlertPopupComponent, {
-            data: this.dataAlertCheck, height: 'auto', width: '350px'
+            data: this.dataAlertCheck, height: 'auto', width: '350px',
+            backdropClass: "background-dialog"
           })
           dialogRef.afterClosed().subscribe(result => {
           })

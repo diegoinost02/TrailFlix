@@ -49,7 +49,8 @@ export class LoginComponent{
     }
     else {
       const dialogRef = this.dialog.open(AlertPopupComponent, {
-        data: this.dataAlertVerify, height: 'auto', width: '350px'
+        data: this.dataAlertVerify, height: 'auto', width: '350px',
+        backdropClass: "background-dialog"
       })
       dialogRef.afterClosed().subscribe(result => {
       })
@@ -76,7 +77,8 @@ export class LoginComponent{
         else {
           console.log("User no verificado");
           const dialogRef = this.dialog.open(AlertPopupComponent, {
-            data: this.dataAlertAuth, height: 'auto', width: '350px'
+            data: this.dataAlertAuth, height: 'auto', width: '350px',
+            backdropClass: "background-dialog"
           })
           dialogRef.afterClosed().subscribe(result => {
           })

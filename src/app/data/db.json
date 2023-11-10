@@ -2,7 +2,7 @@
   "users": [
     {
       "id": 2,
-      "userName": "juan",
+      "userName": "Juan Manuel",
       "email": "juan@gmail.com",
       "password": "juantretta",
       "isSubscribed": true

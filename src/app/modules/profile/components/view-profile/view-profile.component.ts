@@ -43,7 +43,7 @@ export class ViewProfileComponent implements OnInit{
     this.router.navigate(['/profile/edit/password'])
   }
   subscriptionDate(){
-    const dialogRef = this.dialog.open(SubscriptionComponent, { height: 'auto', width: '350px' })
+    const dialogRef = this.dialog.open(SubscriptionComponent, { height: 'auto', width: '350px', backdropClass: "background-dialog" })
     dialogRef.afterClosed().subscribe(result => {
     })
   }

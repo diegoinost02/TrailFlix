@@ -4,6 +4,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { ErrorComponent } from './error/error.component';
 import { RouterModule } from '@angular/router';
+import { AlertPopupComponent } from './alert-popup/alert-popup.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 
@@ -12,7 +13,9 @@ import { ReactiveFormsModule } from '@angular/forms';
   declarations: [
     NavBarComponent,
     FooterComponent,
-    ErrorComponent
+    ErrorComponent,
+    AlertPopupComponent
+   
   ],
   imports: [
     CommonModule,
