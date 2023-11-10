@@ -72,7 +72,8 @@ export class SubscriptionComponent {
       }
       else {
         const dialogRef = this.dialog.open(AlertPopupComponent, {
-          data: this.dataAlert, height: 'auto', width: '350px'
+          data: this.dataAlert, height: 'auto', width: '350px',
+          backdropClass: "background-dialog"
         })
         dialogRef.afterClosed().subscribe(result => {
         })
