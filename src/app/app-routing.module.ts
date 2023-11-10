@@ -24,6 +24,10 @@ const routes: Routes = [
     loadChildren: () => import('./modules/search/search.module').then(m => m.SearchModule)
   },
   {
+    path: 'search/:movie',
+    loadChildren: () => import('./modules/search/search.module').then(m => m.SearchModule)
+  },
+  {
     path: '**',
     component: ErrorComponent
   }
