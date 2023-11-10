@@ -32,15 +32,19 @@
       </ul>
 
       <div class="navbar_search"> 
-        <form class="row">
+
+
+        <form [formGroup]="formSearch" (ngSubmit)="goToSearch()">
         <input
+         formControlName ="search"
           class="me-2 col input_color"
           type="text"
           placeholder="Buscar"
           data-ms-editor="true"
           style="width: 100%;"
+          name="search"
         />
-        <button class="btn button_color col-4 me-2">Buscar</button>
+        <button type="submit" class="btn button_color col-4 me-2">Buscar</button>
       </form>
     </div>
      
