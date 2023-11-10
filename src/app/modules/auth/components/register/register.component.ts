@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { User } from 'src/app/core/Models';
+import { Popup, User } from 'src/app/core/Models';
 import { UsersService } from 'src/app/core/services/users.service';
+import { AlertPopupComponent } from 'src/app/shared/alert-popup/alert-popup.component';
 
 @Component({
   selector: 'app-register',
@@ -12,7 +14,21 @@ import { UsersService } from 'src/app/core/services/users.service';
 export class RegisterComponent {
 
   user: User = new User();
-  constructor(private router: Router, private formBuilder: FormBuilder, private usersService: UsersService) { }
+
+  dataAlertPassword: Popup = {
+    title: 'No se pudo registrar',
+    body: 'Las contraseñas deben ser iguales'
+  }
+  dataAlertVerify: Popup = {
+    title: 'No se pudo registrar',
+    body: 'Debe completar todos los campos'
+  }
+  dataAlertCheck: Popup = {
+    title: 'No se pudo registrar',
+    body: 'El mail ya esta en uso'
+  }
+
+  constructor(private router: Router, private formBuilder: FormBuilder, private usersService: UsersService, private dialog: MatDialog) { }
 
   formUser = this.formBuilder.group({
     'name': ['', Validators.required],
@@ -50,12 +66,20 @@ export class RegisterComponent {
         this.checkAccount();
       }
       else {
-        alert("Las contraseñas deben ser iguales")
-        console.log("Contraseñas distinas"); //agregar logica
+        const dialogRef = this.dialog.open(AlertPopupComponent, {
+          data: this.dataAlertPassword, height: 'auto', width: '350px'
+        })
+        dialogRef.afterClosed().subscribe(result => {
+        })
+        console.log("Contraseñas distinas");
       }
     }
     else {
-      alert("Debe completar todos los campos");
+      const dialogRef = this.dialog.open(AlertPopupComponent, {
+        data: this.dataAlertVerify, height: 'auto', width: '350px'
+      })
+      dialogRef.afterClosed().subscribe(result => {
+      })
     }
   }
 
@@ -73,7 +97,11 @@ export class RegisterComponent {
 
         if (user.length > 0) {
 
-          alert("El mail ya esta en uso")
+          const dialogRef = this.dialog.open(AlertPopupComponent, {
+            data: this.dataAlertCheck, height: 'auto', width: '350px'
+          })
+          dialogRef.afterClosed().subscribe(result => {
+          })
           console.log("User ya registrado")
         }
         else {
@@ -90,16 +118,30 @@ export class RegisterComponent {
 
     this.usersService.addUser(user).subscribe({
 
-      next: (users: User[]) => {
-
-        console.log("User creado")
-        const token = this.usersService.generateToken(users[0]);
-        this.usersService.setCurrentUser(token);
-
-        this.router.navigate(['/home'])
+      next: () => {
+        this.login()
       },
       error: (error: any) => {
         console.log(error)
+      }
+    })
+  }
+
+  login() {
+    this.usersService.getUserToAuth(this.user).subscribe({
+
+      next: (users: User[]) => {
+        if (users.length > 0) {
+          console.log("User verificado");
+
+          const token = this.usersService.generateToken(users[0]);
+          this.usersService.setCurrentUser(token);
+
+          this.router.navigate(["/home"]);
+        }
+      },
+      error: (error: any) => {
+        console.error(error);
       }
     })
   }

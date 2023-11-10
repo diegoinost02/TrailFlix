@@ -1,0 +1,20 @@
+<div class="popup-container">
+    <h4 mat-dialog-title class="custom-dialog-title">{{ dialogData.title }}</h4>
+    <div mat-dialog-content class="main-container">
+      <span>{{ dialogData.span }}</span>
+
+      <form [formGroup]="formUser" (submit)="verifyPassword()">
+
+        <input  type="password" formControlName="password" placeholder="Verifique su contraseña"
+        [hidden]="dialogData.ocultVerification">
+
+        <button class="btn" (click)="dialogData.onClick()" [hidden]="dialogData.disguiseButtonVerify">
+            Dar de baja
+        </button>
+
+        <button class="btn" (click)="dialogData.onClick()" [hidden]="dialogData.disguiseButtonSubmit" [disabled]="formUser.invalid">
+            Dar de baja
+        </button>
+      </form>
+    </div>
+  </div>

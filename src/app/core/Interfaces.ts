@@ -15,3 +15,8 @@ export interface IFav{
     keyYoutube:string;
     overview:string;
 }
+
+export interface IPopup{
+    title: string;
+    body: string;
+}

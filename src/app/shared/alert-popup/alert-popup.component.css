@@ -1,0 +1,11 @@
+.custom-dialog-title{
+    color: white;
+}
+.popup-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(51, 51, 51);
+    padding: 20px;
+}
