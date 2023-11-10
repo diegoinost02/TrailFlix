@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/core/Models';
@@ -31,10 +31,10 @@ export class LoginComponent{
     this.router.navigate(['/auth/register']);
   }
 
-  async login(){
+  async verificar(){
     if(this.formUser.valid){
       await this.cargarValores();
-      this.verificar();
+      this.login();
     }
     else{
       alert("Debe completar todos los campos");
@@ -46,7 +46,7 @@ export class LoginComponent{
     this.user.password = this.formUser.value.password!;
   }
 
-  verificar(){
+  login(){
     this.usersService.getUserToAuth(this.user).subscribe({
 
       next: (users:User[]) =>{

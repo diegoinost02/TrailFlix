@@ -1,0 +1,26 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="edit-name-container">
+    
+    <form class="form-edit" [formGroup]="formUser" (ngSubmit)="editName()">
+
+        <h3>Actualice su nombre</h3>
+
+        <div class="field">
+            <label for="name">Nuevo nombre de usuario</label>
+            <input type="text" formControlName="name" placeholder="Nombre">
+        </div>
+
+        <div class="field">
+            <label for="name">Confirme su contraseña</label>
+            <input type="password" formControlName="password" placeholder="Contraseña">
+        </div>
+
+        <div class="buttons">
+            <button class="btn" type="submit" [disabled]="formUser.invalid">Actualizar</button>
+            <button class="btn" (click)="comeToViewProfile()">Cancelar</button>
+        </div>
+    </form>
+</div>
+
+<app-footer></app-footer>

@@ -17,7 +17,7 @@ export class ViewProfileComponent implements OnInit{
   markedPassword: string = '';
   subscription: boolean = false;
 
-  ngOnInit(): void {
+   ngOnInit(): void {
     this.loadData();
   }
 
@@ -32,7 +32,9 @@ export class ViewProfileComponent implements OnInit{
     }
   }
 
-  editUserName(){}
+  editUserName(){
+    this.router.navigate(['/profile/edit/name'])
+  }
   editEmail(){}
   editPassword(){}
   subscriptionDate(){}

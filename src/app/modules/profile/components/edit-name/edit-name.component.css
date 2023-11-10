@@ -1,0 +1,83 @@
+h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 20px;
+}
+
+.edit-name-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    height: calc(100% - 100px);
+}
+
+.form-edit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(18, 18, 18);
+    min-width: 40%;
+    height: auto;
+    padding: 30px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.form-edit > * {
+    margin: 15px;
+  }
+
+.field {
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+    margin: 10px;
+}
+@media screen and (max-width: 400px) {
+    .form-edit {
+        max-width: 90%;
+    }
+    .field {
+        width: 100%;
+    }
+}
+
+label {
+    color: white;
+    margin-bottom: 5px;
+}
+
+input {
+    background-color: rgb(49, 49, 49);
+    border: none;
+    outline: none;
+    color: white
+}
+
+.buttons {
+    display: flex;
+    padding: 10px;
+}
+
+.btn {
+    border: none;
+    border-radius: 3px;
+    margin-left: 6px;
+    margin-right: 6px;
+    background-color: rgb(57, 57, 57);
+    color: rgb(210, 207, 207);
+}
+.btn:hover {
+    color: rgb(236, 236, 236);
+    background-color: rgb(70, 70, 70);
+}
+button:disabled{
+    opacity: 0.6;
+  }
+  
