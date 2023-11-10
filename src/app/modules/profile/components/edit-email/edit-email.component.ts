@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { User } from 'src/app/core/Models';
+import { Popup, User } from 'src/app/core/Models';
 import { UsersService } from 'src/app/core/services/users.service';
+import { AlertPopupComponent } from 'src/app/shared/alert-popup/alert-popup.component';
 
 @Component({
   selector: 'app-edit-email',
@@ -11,12 +13,17 @@ import { UsersService } from 'src/app/core/services/users.service';
 })
 export class EditEmailComponent  implements OnInit{
 
-  constructor(private router: Router, private usersService: UsersService, private formBuilder: FormBuilder){}
+  constructor(private router: Router, private usersService: UsersService, private formBuilder: FormBuilder,  private dialog: MatDialog){}
 
   user: User = new User();
 
+  dataAlert: Popup = {
+    title: 'No se pudo actualizar',
+    body: 'La contraseña ingresada no coindice con tu contraseña actual'
+    }
+
   formUser = this.formBuilder.group({
-    'email': ['', Validators.required,Validators.email],
+    'email': ['', Validators.required], //,Validators.email],
     'password': ['', Validators.required]
   })
 
@@ -38,12 +45,16 @@ export class EditEmailComponent  implements OnInit{
       if(this.formUser.value.password === this.user.password){
         this.updateUser();
       }
-      else{
-        alert("La contraseña no coincide");
+      else {
+        const dialogRef = this.dialog.open(AlertPopupComponent, {
+          data: this.dataAlert, height: 'auto', width: '350px'
+        })
+        dialogRef.afterClosed().subscribe(result => {
+        })
       }
     }
   }
-
+  
   updateUser(){
     this.user.email = this.formUser.value.email!;
     this.usersService.editUser(this.user.id!, this.user).subscribe({

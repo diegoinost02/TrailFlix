@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { User } from 'src/app/core/Models';
+import { Popup, User } from 'src/app/core/Models';
 import { UsersService } from 'src/app/core/services/users.service';
+import { AlertPopupComponent } from 'src/app/shared/alert-popup/alert-popup.component';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +15,16 @@ export class LoginComponent{
 
   public user: User = new User();
 
-  constructor(private router: Router, private formBuilder: FormBuilder, private usersService:UsersService) { }
+  dataAlertVerify: Popup = {
+    title: 'No se pudo iniciar sesión',
+    body: 'Debe completar todos los campos'
+  }
+  dataAlertAuth: Popup = {
+    title: 'No se pudo iniciar sesión',
+    body: 'Usuario o contraseña incorrectos'
+  }
+
+  constructor(private router: Router, private formBuilder: FormBuilder, private usersService:UsersService, private dialog: MatDialog) { }
 
   formUser = this.formBuilder.group({
     'email': ['', Validators.required,],//Validators.email],
@@ -31,13 +42,17 @@ export class LoginComponent{
     this.router.navigate(['/auth/register']);
   }
 
-  async verificar(){
+  async verify(){
     if(this.formUser.valid){
       await this.cargarValores();
       this.login();
     }
-    else{
-      alert("Debe completar todos los campos");
+    else {
+      const dialogRef = this.dialog.open(AlertPopupComponent, {
+        data: this.dataAlertVerify, height: 'auto', width: '350px'
+      })
+      dialogRef.afterClosed().subscribe(result => {
+      })
     }
   }
 
@@ -60,7 +75,11 @@ export class LoginComponent{
         }
         else {
           console.log("User no verificado");
-          alert("Email o contraseña incorrectos")
+          const dialogRef = this.dialog.open(AlertPopupComponent, {
+            data: this.dataAlertAuth, height: 'auto', width: '350px'
+          })
+          dialogRef.afterClosed().subscribe(result => {
+          })
         }
       },
       error: (error: any) => {

@@ -21,7 +21,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     EditNameComponent,
     EditEmailComponent,
     EditPasswordComponent,
-    SubscriptionComponent
+    SubscriptionComponent,
   ],
   imports: [
     CommonModule,

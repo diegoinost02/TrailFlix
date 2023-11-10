@@ -1,19 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { User } from 'src/app/core/Models';
+import { Popup, User } from 'src/app/core/Models';
 import { UsersService } from 'src/app/core/services/users.service';
+import { AlertPopupComponent } from 'src/app/shared/alert-popup/alert-popup.component';
 
 @Component({
   selector: 'app-edit-name',
   templateUrl: './edit-name.component.html',
   styleUrls: ['./edit-name.component.css']
 })
-export class EditNameComponent implements OnInit{
+export class EditNameComponent implements OnInit {
 
-  constructor(private router: Router, private usersService: UsersService, private formBuilder: FormBuilder){}
+  constructor(private router: Router, private usersService: UsersService, private formBuilder: FormBuilder, private dialog: MatDialog) { }
 
   user: User = new User();
+
+  dataAlert: Popup = {
+    title: 'No se pudo actualizar',
+    body: 'La contraseña ingresada no coindice con tu contraseña actual'
+  }
 
   formUser = this.formBuilder.group({
     'name': ['', Validators.required,],
@@ -21,30 +28,34 @@ export class EditNameComponent implements OnInit{
   })
 
   ngOnInit(): void {
-      this.loadData();
+    this.loadData();
   }
-  loadData(){
+  loadData() {
     const user = this.usersService.getCurrentUser();
-    if(user){
+    if (user) {
       user.subscribe((user: User[]) => {
         this.user = user[0];
       })
     }
   }
 
-  editName(){
-    if(this.formUser.valid){
+  editName() {
+    if (this.formUser.valid) {
 
-      if(this.formUser.value.password === this.user.password){
+      if (this.formUser.value.password === this.user.password) {
         this.updateUser();
       }
-      else{
-        alert("La contraseña no coincide");
+      else {
+        const dialogRef = this.dialog.open(AlertPopupComponent, {
+          data: this.dataAlert, height: 'auto', width: '350px'
+        })
+        dialogRef.afterClosed().subscribe(result => {
+        })
       }
     }
   }
 
-  updateUser(){
+  updateUser() {
     this.user.userName = this.formUser.value.name!;
     this.usersService.editUser(this.user.id!, this.user).subscribe({
       next: () => {
@@ -55,7 +66,7 @@ export class EditNameComponent implements OnInit{
     })
   }
 
-  comeToViewProfile(){
+  comeToViewProfile() {
     this.router.navigate(['/profile'])
   }
 
