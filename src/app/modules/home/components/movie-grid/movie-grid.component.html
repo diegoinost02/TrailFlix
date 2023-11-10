@@ -45,7 +45,7 @@
               loading="lazy"
               src="{{ 'https://image.tmdb.org/t/p/w500' + movie.linkPoster }}"
               alt=""
-              class="img-fluid"
+              class="img-fluid img_poster"
             />
           </a>
         </div>
@@ -70,7 +70,7 @@
           
             src="{{ 'https://image.tmdb.org/t/p/w500' + movie.poster_path }}"
             alt=""
-            class="img-fluid"
+            class="img_poster"
           />
           <img
           *ngIf="movie.poster_path ===null"
