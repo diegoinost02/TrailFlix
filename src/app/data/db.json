@@ -6,13 +6,6 @@
       "email": "juan@gmail.com",
       "password": "juantretta",
       "isSubscribed": true
-    },
-    {
-      "id": 3,
-      "userName": "diego",
-      "email": "diego@gmail.com",
-      "password": "diegoinostroza",
-      "isSubscribed": true
     }
   ],
   "MovieFavs": [
