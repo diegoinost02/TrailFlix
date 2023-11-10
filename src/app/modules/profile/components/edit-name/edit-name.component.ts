@@ -32,13 +32,6 @@ export class EditNameComponent implements OnInit{
     }
   }
 
-  get getName() {
-    return this.formUser.get('name') as FormControl;
-  }
-  get getPassword() {
-    return this.formUser.get('password') as FormControl;
-  }
-
   editName(){
     if(this.formUser.valid){
 
