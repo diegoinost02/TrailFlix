@@ -17,17 +17,17 @@
 
 .button_color
 {
-    color:rgb(255, 255, 255);
-    border-radius: 0.5rem;
-    font-size: 1.0rem;
-    border-color: white;
-    border-width: 0.1rem;
+    border: none;
+    border-radius: 3px;
+    margin-left: 6px;
+    margin-right: 6px;
+    background-color: rgb(34, 34, 34);
+    color: rgb(210, 207, 207);
 }
 .button_color:hover
 {
-    color: rgb(48, 48, 48);
-   
-    background-color: white;
+    color: rgb(236, 236, 236);
+    background-color: rgb(48, 48, 48);
 }
 .input_color{
     background-color:black;
@@ -40,8 +40,8 @@
 }
 
 .input_color::placeholder{
-
-    color: rgb(245, 245, 245);
+    padding-left: 10px;
+    color: rgb(168, 168, 168);
 }
 
 .navbar_search
@@ -52,4 +52,7 @@
 }
 a{
     cursor:pointer;
+}
+form{
+    display: flex;
 }

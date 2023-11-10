@@ -81,7 +81,6 @@ export class SubscriptionComponent {
     }
   }
 
-
   deleteUser() {
     this.usersService.deleteUser(this.user.id!).subscribe({
       next: () => {
