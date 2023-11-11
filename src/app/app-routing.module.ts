@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ErrorComponent } from './shared/error/error.component';
 
 const routes: Routes = [
   {
@@ -26,11 +25,10 @@ const routes: Routes = [
   {
     path: 'search/:movie',
     loadChildren: () => import('./modules/search/search.module').then(m => m.SearchModule),
-   
   },
   {
     path: '**',
-    component: ErrorComponent
+    loadComponent: () => import('./standalones/error/error.component').then(m => m.ErrorComponent)
   }
 ];
 

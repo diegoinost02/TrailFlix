@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
@@ -11,7 +11,7 @@ import { AlertPopupComponent } from 'src/app/shared/alert-popup/alert-popup.comp
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent{
+export class LoginComponent implements OnInit{
 
   public user: User = new User();
 
@@ -24,7 +24,24 @@ export class LoginComponent{
     body: 'Usuario o contraseña incorrectos'
   }
 
-  constructor(private router: Router, private formBuilder: FormBuilder, private usersService:UsersService, private dialog: MatDialog) { }
+  constructor(private router: Router, private formBuilder: FormBuilder, private usersService:UsersService, private dialog: MatDialog) {}
+
+  ///llama a verificar si el user esta logueado
+  ngOnInit(): void {
+    this.verifyUser();
+  }
+  ///verificar si el user ya esta logueado, de ser asi se redirige al home
+  verifyUser() {
+    const user = this.usersService.getCurrentUser();
+    if (user) {
+      console.log("logueado")
+      this.router.navigate(['/home'])
+    }
+    else{
+      console.log("No logueado")
+    }
+  }
+
 
   formUser = this.formBuilder.group({
     'email': ['', Validators.required,],//Validators.email],
