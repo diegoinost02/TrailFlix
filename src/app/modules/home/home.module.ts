@@ -8,6 +8,7 @@ import{MatDialogModule} from '@angular/material/dialog'
 import { PageComponent } from './components/page/page.component';
 import { MovieGridComponent } from './components/movie-grid/movie-grid.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
+import { MovieTrailerComponent } from './components/movie-trailer/movie-trailer.component';
 
 
 
@@ -17,6 +18,7 @@ import { MovieDetailsComponent } from './components/movie-details/movie-details.
     PageComponent,
     MovieGridComponent,
     MovieDetailsComponent,
+    MovieTrailerComponent,
    
   ],
   imports: [

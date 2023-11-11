@@ -3,12 +3,7 @@ infiniteScroll
   [infiniteScrollDistance]="2"
   [infiniteScrollThrottle]="1000"
   (scrolled)="appendSearch()"
-
-
 >
-    
-
-
   <div class="row">
     <div class="col-12 color_text">{{search}}</div>
 
@@ -19,7 +14,7 @@ infiniteScroll
       *ngFor="let movie of movies"
     >
       <div class="card__movie">
-        <a class="card_enlace">
+        <a class="card_enlace" (click)="dialoMovieDetails(movie)">
           <img
             *ngIf="movie.poster_path !=null"
             loading="lazy"

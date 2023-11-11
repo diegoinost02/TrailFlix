@@ -43,9 +43,9 @@
           <a class="card_enlace">
             <img
               loading="lazy"
-              src="{{ 'https://image.tmdb.org/t/p/w500' + movie.linkPoster }}"
+              src="{{ 'https://image.tmdb.org/t/p/w342' + movie.linkPoster }}"
               alt=""
-              class="img-fluid img_poster"
+              class="img_poster"
             />
           </a>
         </div>
@@ -68,7 +68,7 @@
           *ngIf="movie.poster_path != null"
           loading="lazy"
           
-            src="{{ 'https://image.tmdb.org/t/p/w500' + movie.poster_path }}"
+            src="{{ 'https://image.tmdb.org/t/p/w342' + movie.poster_path }}"
             alt=""
             class="img_poster"
           />
@@ -77,7 +77,7 @@
           loading="lazy"
           src="../../../../../assets/images/No-Image-Placeholder.svg.png"
           alt=""
-          class="img-fluid"
+          class="img_poster"
         />
         </a>
       </div>
