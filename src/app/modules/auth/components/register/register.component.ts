@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
@@ -11,7 +11,7 @@ import { AlertPopupComponent } from 'src/app/shared/alert-popup/alert-popup.comp
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent {
+export class RegisterComponent implements OnInit{
 
   user: User = new User();
 
@@ -28,7 +28,24 @@ export class RegisterComponent {
     body: 'El mail ya esta en uso'
   }
 
-  constructor(private router: Router, private formBuilder: FormBuilder, private usersService: UsersService, private dialog: MatDialog) { }
+  constructor(private router: Router, private formBuilder: FormBuilder, private usersService: UsersService, private dialog: MatDialog) {}
+
+  ///al inicializar llama a verifyUser
+  ngOnInit(): void {
+    this.verifyUser();
+  }
+  ///verifica si el user esta autenticado, de ser asi se redirige al home
+  verifyUser() {
+    const user = this.usersService.getCurrentUser();
+    if (user) {
+      console.log("logueado")
+      this.router.navigate(['/home'])
+    }
+    else{
+      console.log("No logueado")
+    }
+  }
+
 
   formUser = this.formBuilder.group({
     'name': ['', Validators.required],
