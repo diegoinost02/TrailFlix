@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
-import { ErrorComponent } from './error/error.component';
+import { ErrorComponent } from '../standalones/error/error.component';
 import { RouterModule } from '@angular/router';
 import { AlertPopupComponent } from './alert-popup/alert-popup.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -13,7 +13,6 @@ import { ReactiveFormsModule } from '@angular/forms';
   declarations: [
     NavBarComponent,
     FooterComponent,
-    ErrorComponent,
     AlertPopupComponent
    
   ],
@@ -24,8 +23,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   exports: [
     NavBarComponent,
-    FooterComponent,
-    ErrorComponent
+    FooterComponent
   ]
 })
 export class SharedModule { }

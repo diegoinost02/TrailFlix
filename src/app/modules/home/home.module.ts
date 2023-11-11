@@ -16,8 +16,7 @@ import { MovieDetailsComponent } from './components/movie-details/movie-details.
   declarations: [
     PageComponent,
     MovieGridComponent,
-    MovieDetailsComponent,
-   
+    MovieDetailsComponent,   
   ],
   imports: [
     CommonModule,

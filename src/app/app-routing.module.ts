@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ErrorComponent } from './shared/error/error.component';
+import { ErrorComponent } from './standalones/error/error.component';
+import { AboutUsComponent } from './standalones/about-us/about-us.component';
 
 const routes: Routes = [
   {
@@ -26,11 +27,14 @@ const routes: Routes = [
   {
     path: 'search/:movie',
     loadChildren: () => import('./modules/search/search.module').then(m => m.SearchModule),
-   
+  },
+  {
+    path: 'about-us',
+    loadChildren: () => import('./standalones/about-us/about-us.component').then(s => s.AboutUsComponent)
   },
   {
     path: '**',
-    component: ErrorComponent
+    loadChildren: () => import('./standalones/error/error.component').then(s => s.ErrorComponent)
   }
 ];
 
