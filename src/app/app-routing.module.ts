@@ -30,11 +30,11 @@ const routes: Routes = [
   },
   {
     path: 'about-us',
-    loadChildren: () => import('./standalones/about-us/about-us.component').then(s => s.AboutUsComponent)
+    component: AboutUsComponent
   },
   {
     path: '**',
-    loadChildren: () => import('./standalones/error/error.component').then(s => s.ErrorComponent)
+    component: ErrorComponent
   }
 ];
 
