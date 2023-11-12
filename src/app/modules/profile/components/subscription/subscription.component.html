@@ -8,11 +8,11 @@
         <input  type="password" formControlName="password" placeholder="Verifique su contraseña"
         [hidden]="dialogData.ocultVerification">
 
-        <button class="btn" (click)="dialogData.onClick()" [hidden]="dialogData.disguiseButtonVerify">
+        <button class="btn" (click)="confirmation()" [hidden]="dialogData.disguiseButtonVerify">
             Dar de baja
         </button>
 
-        <button class="btn" (click)="dialogData.onClick()" [hidden]="dialogData.disguiseButtonSubmit" [disabled]="formUser.invalid">
+        <button class="btn" onClick="verifyPassword()" [hidden]="dialogData.disguiseButtonSubmit" [disabled]="formUser.invalid">
             Dar de baja
         </button>
       </form>

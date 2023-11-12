@@ -44,8 +44,7 @@ export class SubscriptionComponent {
     span: 'Subscripción Activa',
     ocultVerification: true,
     disguiseButtonVerify: false,
-    disguiseButtonSubmit: true,
-    onClick: () => this.confirmation(),
+    disguiseButtonSubmit: true
   };
 
   confirmation() {
@@ -54,8 +53,7 @@ export class SubscriptionComponent {
       span: '¿Estas seguro de darte de baja?',
       ocultVerification: false,
       disguiseButtonVerify: true,
-      disguiseButtonSubmit: false,
-      onClick: () => this.verifyPassword()
+      disguiseButtonSubmit: false
     };
   }
 
@@ -72,8 +70,7 @@ export class SubscriptionComponent {
       }
       else {
         const dialogRef = this.dialog.open(AlertPopupComponent, {
-          data: this.dataAlert, height: 'auto', width: '350px',
-          backdropClass: "background-dialog"
+          data: this.dataAlert, height: 'auto', width: '350px'
         })
         dialogRef.afterClosed().subscribe(result => {
         })
