@@ -14,6 +14,8 @@ import { AlertPopupComponent } from 'src/app/shared/alert-popup/alert-popup.comp
 export class RegisterComponent implements OnInit{
 
   user: User = new User();
+
+   /// Creo los datos de las diferentes alertas para invocar a el componente Popup y que sea reutilizable
   dataAlertConditions: Popup = {
     title: 'Términos y condiciones',
     body:
@@ -31,7 +33,7 @@ export class RegisterComponent implements OnInit{
 
     Para cualquier consulta o información, los Usuarios podrán ponerse en contacto con nosotros a través de: https://www.linkedin.com/in/diego-inostroza
     
-    La aplicación está destinada exclusivamente para uso personal y no comercial. Los usuarios no están autorizados a emplear la aplicación con propósitos comerciales o lucrativos, ya que esta ha sido desarrollada como parte de un proyecto universitario llevado a cabo por Juan Manuel Tretta Alvo y Diego Ezequiel Inostroza.`
+    La aplicación está destinada exclusivamente para uso personal y no comercial. Los usuarios no están autorizados a emplear la aplicación con propósitos comerciales o lucrativos, ya que esta ha sido desarrollada como parte de un proyecto universitario.`
     }
 
   dataAlertPassword: Popup = {
@@ -65,7 +67,7 @@ export class RegisterComponent implements OnInit{
     }
   }
 
-
+  // Defino los controles del formulario
   formUser = this.formBuilder.group({
     'name': ['', Validators.required],
     'email': ['', Validators.required], //,Validators.email],
@@ -74,6 +76,7 @@ export class RegisterComponent implements OnInit{
     'conditions': ['', Validators.required]
   })
 
+    // Getters para poder acceder a las propiedades de los atributos del formulario
   get getName() {
     return this.formUser.get('name') as FormControl;
   }
@@ -90,10 +93,12 @@ export class RegisterComponent implements OnInit{
     return this.formUser.get('conditions') as FormControl;
   }
 
+  // Función para el boton de ir al componente Login
   goToLogin() {
     this.router.navigate(['/auth/login']);
   }
 
+  // Función para abrir los terminos y condiciones en forma de popup
   openConditions(){
     const dialogRef = this.dialog.open(AlertPopupComponent, {
       data: this.dataAlertConditions, height: 'auto', width: 'auto',
@@ -103,7 +108,9 @@ export class RegisterComponent implements OnInit{
     })
   }
 
-  register() {
+    /* Verifico si el formulario es valido, de ser asi invoco las funciones necesarias para registrarse,
+  De lo contrario muestro la alerta de "Completar todos los campos" */
+  verify() {
     if (this.formUser.valid) {
       if (this.formUser.value.password === this.formUser.value.passwordConfirmation) {
 
@@ -129,7 +136,7 @@ export class RegisterComponent implements OnInit{
       })
     }
   }
-
+  // Si el formulario es valido, cargo los valores del mismo en la instancia User del componente
   cargarValores() {
     this.user.userName = this.formUser.value.name!;
     this.user.email = this.formUser.value.email!;
@@ -137,6 +144,8 @@ export class RegisterComponent implements OnInit{
     this.user.isSubscribed = true;
   }
 
+  /* Verifico que no exista un usuario registrado con el mismo Mail,
+  de ser asi llamo a la funcion para crear la cuenta, de lo contrario muestro una alerte*/
   checkAccount() {
     this.usersService.getToCheck(this.user).subscribe({
 
@@ -162,6 +171,7 @@ export class RegisterComponent implements OnInit{
     })
   }
 
+  // Registro la nueva cuenta en el archivo JSON que sera consumido por JsonServer
   createAccount(user: User) {
 
     this.usersService.addUser(user).subscribe({
@@ -175,6 +185,7 @@ export class RegisterComponent implements OnInit{
     })
   }
 
+  // Genero un token de autenticación y hago el respectivo logueo de la nueva cuenta registrada
   login() {
     this.usersService.getUserToAuth(this.user).subscribe({
 

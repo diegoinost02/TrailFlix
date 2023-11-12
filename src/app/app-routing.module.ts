@@ -32,6 +32,11 @@ const routes: Routes = [
     canActivate: [authGuardGuard]
   },
   {
+    path: 'about',
+    loadChildren: () => import('./modules/about/about.module').then(m => m.AboutModule),
+    canActivate: [authGuardGuard]
+  },
+  {
     path: '**',
     loadComponent: () => import('./standalones/error/error.component').then(m => m.ErrorComponent)
   }
