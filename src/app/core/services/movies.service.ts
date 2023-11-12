@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, catchError, map, of, tap } from 'rxjs';
+import { Observable, catchError, map, of, switchMap, tap } from 'rxjs';
 import { Movie, PeliculasResponse } from '../InterfaceMovies';
 import { Video, Videos } from '../InterfaceVideo';
 import { IFav } from '../Interfaces';
@@ -155,10 +155,32 @@ export class MoviesService {
     return this.http.post<IFav[]>(`${this.UrlJsonServer}/MovieFavs`, FavMovie);
   }
 
-  removeFavMovie(id: number): Observable<boolean> {
-    return this.http.delete(`${this.UrlJsonServer}/MovieFavs/${id}`).pipe(
-      map((response) => true),
-      catchError((error) => of(false))
+  removeFavMovie(idMovie: number, idUser: number): Observable<boolean> {
+    let favMovie: any;
+  
+    return this.getIdFavMovie(idMovie, idUser).pipe(
+      switchMap((fav) => {
+        favMovie = fav;
+  
+        if (favMovie && favMovie.length > 0) {
+          console.log(favMovie[0].id);
+  
+          return this.http.delete(`${this.UrlJsonServer}/MovieFavs/${favMovie[0].id}`).pipe(
+            map((response) => true),
+            catchError((error) => of(false))
+          );
+        } else {
+          // No se encontró la película favorita
+          return of(false);
+        }
+      })
     );
   }
+
+
+  getIdFavMovie(idMovie: number, idUser:number): Observable<IFav[]> {
+    return this.http.get<IFav[]>(`${this.UrlJsonServer}/MovieFavs?idUser=${idUser}&idMovie=${idMovie}`).pipe(
+    );
+  }
+
 }

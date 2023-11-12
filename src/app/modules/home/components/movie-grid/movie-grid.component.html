@@ -40,10 +40,10 @@
         *ngFor="let movie of favMovies"
       >
         <div class="card__movie">
-          <a class="card_enlace">
+          <a class="card_enlace" (click)="dialoMovieDetails(movie)" >
             <img
               loading="lazy"
-              src="{{ 'https://image.tmdb.org/t/p/w342' + movie.linkPoster }}"
+              src="{{ 'https://image.tmdb.org/t/p/w342' + movie.poster_path }}"
               alt=""
               class="img_poster"
             />

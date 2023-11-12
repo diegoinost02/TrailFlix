@@ -16,8 +16,8 @@ export class User implements IUser {
     }
 }
 export class Popup implements IPopup{
-    title: string;
-    body: string;
+    title: string | number;
+    body: string | number ;
 
     constructor(data?: any){
         this.title = data == undefined ? null : data.tittle

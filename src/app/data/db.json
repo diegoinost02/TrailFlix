@@ -17,20 +17,68 @@
   ],
   "MovieFavs": [
     {
-      "id": 2,
-      "idUser": 2,
-      "idMovie": "507089",
-      "linkPoster": "/A4j8S6moJS2zNtRR8oWF08gRnL5.jpg",
-      "keyYoutube": "X4d_v-HyR4o",
-      "overview": " Recently fired and desperate for work, a troubled young man named Mike agrees to take a position as a night security guard at an abandoned theme restaurant: Freddy Fazbear's Pizzeria. But he soon discovers that nothing at Freddy's is what it seems."
+      "idMovie": 575264,
+      "poster_path": "/83sGKvCv2T2CulYbd40Aeduc7n2.jpg",
+      "overview": "Ethan Hunt (Tom Cruise) y la IMF emprenden la misión más peligrosa a la que nunca se han enfrentado: rastrear una nueva y aterradora arma que amenaza a toda la humanidad antes de que caiga en las manos de un enemigo todopoderoso y misterioso.",
+      "keyYoutube": "https://www.youtube.com/embed/HurjfO_TDlQ",
+      "idUser": 3,
+      "id": 1
     },
     {
-      "idUser": 2,
-      "idMovie": "5070s89",
-      "linkPoster": "/A4j8S6moJS2zNtRR8oWF08gRnL5.jpg",
-      "keyYoutube": "X4d_v-HyR4o",
-      "overview": "Recently fired and desperate for work, a troubled young man named Mike agrees to take a position as a night security guard at an abandoned theme restaurant: Freddy Fazbear's Pizzeria. But he soon discovers that nothing at Freddy's is what it seems.",
+      "idMovie": 678512,
+      "poster_path": "/apxaWDCqjPrVc1v5HiKW2r10yiL.jpg",
+      "overview": "Narra la historia de Tim Ballard, un exagente de Seguridad Nacional de Estados Unidos que dejó su trabajo para dedicar su vida, sumergiéndose en el submundo del tráfico de personas a lo largo de hispanoamérica, a intentar salvar las vidas de cientos de niños.",
+      "keyYoutube": "https://www.youtube.com/embed/hyyyKcfJRGQ",
+      "idUser": 3,
+      "id": 2
+    },
+    {
+      "idMovie": 609681,
+      "poster_path": "/vpuuFM032yiX8tox4L84Wl9MGjG.jpg",
+      "overview": "Cuando sus obligaciones la envían a un agujero de gusano vinculado a un revolucionario kree, los poderes de Carol Danvers, la capitana Marvel, se entremezclan con los de Kamala Khan, también conocida como la Sra. Marvel y la sobrina de Carol, ahora astronauta de S.A.B.E.R., Monica Rambeau. Juntas, deberán salvar el universo como \"The Marvels\".",
+      "keyYoutube": "https://www.youtube.com/embed/uwmDH12MAA4",
+      "idUser": 3,
       "id": 3
+    },
+    {
+      "idMovie": 299054,
+      "poster_path": "/2jmE7xH0R0dikmc8iplCPCit4MD.jpg",
+      "overview": "Cuarta entrega de la saga Los Mercenarios. El veterano mercenario Barney “Esquizo” Ross (Sylvester Stallone) y su equipo de estrellas, formado por los hombres más duros (Jason Statham, Dolph Lundgren, 50 Cent, Megan Fox…), afrontan un nuevo desafío, en una trama cargada de acción. Para superarlo y salir airosos, deberán recurrir a su ingenio, experiencia y a la fuerza bruta que los caracteriza.",
+      "keyYoutube": "https://www.youtube.com/embed/Cm3Z1jEjHHc",
+      "idUser": 3,
+      "id": 4
+    },
+    {
+      "idMovie": 975902,
+      "poster_path": "/ssEFC5wfFjj7lJpUgwJDOK1Xu1J.jpg",
+      "overview": "La guerrera celta del mismo nombre que gobierna al pueblo iceni junto a su marido Prasutagus. El rey muere a manos de los soldados romanos, dejando el reino de Boudica sin un heredero varón y los romanos se apoderan de sus tierras y propiedades.  Inspirada en los acontecimientos del año 60 d.C., Boudica sigue a la guerrera celta del mismo nombre que gobierna al pueblo iceni junto a su marido Prasutagus. Cuando muere a manos de los soldados romanos, el reino de Boudica se queda sin un heredero varón y los romanos se apoderan de sus tierras y propiedades. Llevada al borde de la locura y decidida a vengar la muerte de su marido, Boudica reúne a las distintas tribus de la región y libra una guerra épica contra el poderoso imperio romano.",
+      "keyYoutube": "https://www.youtube.com/embed/nFwuqwVLCl8",
+      "idUser": 2,
+      "id": 5
+    },
+    {
+      "idMovie": 609681,
+      "poster_path": "/vpuuFM032yiX8tox4L84Wl9MGjG.jpg",
+      "overview": "Cuando sus obligaciones la envían a un agujero de gusano vinculado a un revolucionario kree, los poderes de Carol Danvers, la capitana Marvel, se entremezclan con los de Kamala Khan, también conocida como la Sra. Marvel y la sobrina de Carol, ahora astronauta de S.A.B.E.R., Monica Rambeau. Juntas, deberán salvar el universo como \"The Marvels\".",
+      "keyYoutube": "https://www.youtube.com/embed/uwmDH12MAA4",
+      "idUser": 2,
+      "id": 6
+    },
+    {
+      "idMovie": 1000081,
+      "poster_path": "/wrFg0Q1kqfOhxlRvb8Dle7WF58F.jpg",
+      "overview": "François Sentinelle tiene dos vidas. De día, es el policía más famoso de la isla de Reunión, conocido por sus duros métodos y sus camisas floreadas, que persigue a los delincuentes en su Defender amarillo. Pero el resto del tiempo, Sentinelle también es un carismático cantante.",
+      "keyYoutube": "https://www.youtube.com/embed/JZvBLLGJ37c",
+      "idUser": 2,
+      "id": 7
+    },
+    {
+      "idMovie": 385687,
+      "poster_path": "/qDRrP4NATGTWH8ORJV6T0BeoIhQ.jpg",
+      "overview": "Dom Toretto y su familia se convierten en el objetivo del vengativo hijo del capo de las drogas Hernán Reyes.",
+      "keyYoutube": "",
+      "idUser": 2,
+      "id": 8
     }
   ]
 }
