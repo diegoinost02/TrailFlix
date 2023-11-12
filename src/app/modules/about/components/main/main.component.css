@@ -1,4 +1,4 @@
-.about-container{
+.about-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,7 +6,8 @@
     margin-left: 20%;
     margin-right: 20%;
 }
-.feature-container{
+
+.feature-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
@@ -15,15 +16,100 @@
     margin-bottom: 80px;
     gap: 1rem;
 }
-.text{
-    padding: 20px;
-    font-size: 20px;
-    width: 500px;
-}
-.img{
+
+.text {
     max-width: 500px;
-    aspect-ratio: 1/1.2;
+    width: 100%;
+    max-height: 470px;
+    padding: 30px;
+    font-size: 17px;
+    /* width: 500px; */
+    width: 100%;
 }
-h2{
+
+.img {
+    /* max-width: 500px; */
+    max-width: 400px;
+    width: 100%;
+    max-height: 470px;
+    object-fit: cover;
+    /* aspect-ratio: 1/1.2; */
+}
+
+.border-img-right {
+    border-radius: 80px 0;
+}
+
+.border-img-left {
+    border-radius: 80px 0 0px 80px;
+}
+
+h2 {
     color: white;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+    .text {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .about-container {
+        margin-right: 10%;
+        margin-left: 10%;
+    }
+
+    .feature-container {
+        gap: 0;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .text {
+        font-size: 12px;
+    }
+
+    .feature-container {
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .text {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 740px) {
+    .text {
+        font-size: 15px;
+    }
+    .border-img-right {
+        border-radius: 5px;
+    }
+
+    .border-img-left {
+        border-radius: 5px;
+    }
+
+    .about-container {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+
+    .feature-container {
+        margin-top: 0px;
+        margin-bottom: 20px;
+        max-width: 430px;
+        grid-template-columns: repeat(1, 1fr);
+        padding-bottom: 40px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    #invert {
+        order: -1;
+        /* Cambia el orden del elemento con id="second" */
+    }
 }
