@@ -136,8 +136,8 @@ input[type="checkbox"] {
 .checkbox{
     display: flex;
 }
-a{
-    color: rgb(255, 255, 255);
+u{
+    cursor: pointer;
 }
 a:hover{
     color: rgb(219, 217, 217);

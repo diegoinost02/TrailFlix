@@ -14,6 +14,25 @@ import { AlertPopupComponent } from 'src/app/shared/alert-popup/alert-popup.comp
 export class RegisterComponent implements OnInit{
 
   user: User = new User();
+  dataAlertConditions: Popup = {
+    title: 'Terminos y condiciones',
+    body:
+    `La Aplicación es un trabajo universitario realizado por Juan Manuel Tretta Alvo y Diego Ezequiel Inostroza. Para acceder el Usuario deberá crear una cuenta de usuario y proporcionar los siguientes datos:
+    -Nombre de usuario
+    -Dirección de correo electrónico
+    -Contraseña
+    
+    El Usuario podrá utilizar la Aplicación para:
+    -Ver trailers
+    -Buscar peliculas
+    -Añadir peliculas a favoritos
+    
+    Los derechos de propiedad intelectual sobre la aplicación, incluidos los códigos fuente y los contenidos, son de propiedad de Juan Manuel Tretta Alvo y Diego Ezequiel Inostroza. La aplicación se distribuye bajo una licencia de código abierto, lo que permite a los usuarios descargar, modificar y redistribuir el código fuente, pero no permite a los usuarios reclamar la propiedad de la aplicación.
+
+    Para cualquier consulta o información, los Usuarios podrán ponerse en contacto con nosotros a través de: https://www.linkedin.com/in/diego-inostroza
+    
+    La aplicación está destinada exclusivamente para uso personal y no comercial. Los usuarios no están autorizados a emplear la aplicación con propósitos comerciales o lucrativos, ya que esta ha sido desarrollada como parte de un proyecto universitario llevado a cabo por Juan Manuel Tretta Alvo y Diego Ezequiel Inostroza.`
+    }
 
   dataAlertPassword: Popup = {
     title: 'No se pudo registrar',
@@ -73,6 +92,15 @@ export class RegisterComponent implements OnInit{
 
   goToLogin() {
     this.router.navigate(['/auth/login']);
+  }
+
+  openConditions(){
+    const dialogRef = this.dialog.open(AlertPopupComponent, {
+      data: this.dataAlertConditions, height: 'auto', width: 'auto',
+      backdropClass: "background-dialog"
+    })
+    dialogRef.afterClosed().subscribe(result => {
+    })
   }
 
   register() {
