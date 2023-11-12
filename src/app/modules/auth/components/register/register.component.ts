@@ -15,7 +15,7 @@ export class RegisterComponent implements OnInit{
 
   user: User = new User();
   dataAlertConditions: Popup = {
-    title: 'Terminos y condiciones',
+    title: 'Términos y condiciones',
     body:
     `La Aplicación es un trabajo universitario realizado por Juan Manuel Tretta Alvo y Diego Ezequiel Inostroza. Para acceder el Usuario deberá crear una cuenta de usuario y proporcionar los siguientes datos:
     -Nombre de usuario
