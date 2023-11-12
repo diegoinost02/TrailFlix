@@ -23,7 +23,7 @@ export class NavBarComponent implements OnInit {
     {
       let movie:string = this.formSearch.value.search!;
 
-    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() =>
+    this.router.navigateByUrl('/search', {skipLocationChange: true}).then(() =>
     this.router.navigate(['/search',movie]));
     }
       

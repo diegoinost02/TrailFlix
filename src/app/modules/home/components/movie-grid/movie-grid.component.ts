@@ -13,6 +13,26 @@ import { UsersService } from 'src/app/core/services/users.service';
   styleUrls: ['./movie-grid.component.css'],
 })
 export class MovieGridComponent implements OnInit, OnDestroy {
+  movies: any = [];
+  banner: any = [];
+  favMovies: any = [];
+
+  user: User = new User();
+  search: string = '';
+
+  movieFav: IFav = {
+    idUser: 0,
+    idMovie: 0,
+    poster_path: '',
+    keyYoutube: '',
+    overview: '',
+  };
+
+  dataPopUp: Popup = {
+    title: '',
+    body: '',
+  };
+
   constructor(
     private movieSer: MoviesService,
     private dialog: MatDialog,
@@ -28,29 +48,6 @@ export class MovieGridComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.movieSer.resetPageHome();
   }
-
-  movies: any = [];
-  banner: any = [];
-  favMovies: any = [];
-
-  user: User = new User();
-
-  ///PARA TEST
-  search: string = '';
-
-  movieFav: IFav = {
-    idUser: 0,
-    idMovie: 0,
-    poster_path: '',
-    keyYoutube: '',
-    overview: '',
-  };
-  ///TEST
-
-  dataPopUp: Popup = {
-    title: '',
-    body: '',
-  };
 
   loadData() {
     const user = this.userService.getCurrentUser();
@@ -122,15 +119,17 @@ export class MovieGridComponent implements OnInit, OnDestroy {
 
   dialoMovieDetails(movie: Movie) {
     const dialogRef = this.dialog.open(MovieDetailsComponent, {
-      width: '50%',
+      width: '40%',
       height: 'auto',
       data: movie,
       backdropClass: 'background-dialog',
       disableClose: true,
+      enterAnimationDuration: ".3s",
+      exitAnimationDuration: ".25s"
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      if (result && result.linkPoster !== undefined) {
+      if (result && result.keyYoutube !== undefined) {
         this.movieFav = result;
         this.movieFav.idUser = this.user.id;
         console.log(this.movieFav);

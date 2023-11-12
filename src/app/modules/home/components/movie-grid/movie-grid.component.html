@@ -4,7 +4,6 @@
   [infiniteScrollDistance]="2"
   [infiniteScrollThrottle]="1000"
   (scrolled)="appendMovies()"
-
 >
   <!-- BANNER -->
   <div class="carousel slide" data-bs-ride="carousel">
@@ -15,16 +14,14 @@
         [ngClass]="{ active: i === 0 }"
       >
         <img
-          src="{{
-            'https://image.tmdb.org/t/p/w1280' + movie.backdrop_path
-          }}"
+          src="{{ 'https://image.tmdb.org/t/p/w1280' + movie.backdrop_path }}"
           alt=""
           class="d-block w-100 banner_img"
         />
 
-        <div class="carousel-caption d-none d-md-block">
-          <h5 class="banner_text">{{ movie.title }}</h5>
-          <p class="banner_text">{{ movie.overview }}</p>
+        <div class="carousel-caption d-none d-md-block banner_text">
+          <h5>{{ movie.title }}</h5>
+          <p>{{ movie.overview | slice : 0 : 300 }}...</p>
         </div>
       </div>
     </div>
@@ -40,7 +37,7 @@
         *ngFor="let movie of favMovies"
       >
         <div class="card__movie">
-          <a class="card_enlace" (click)="dialoMovieDetails(movie)" >
+          <a class="card_enlace" (click)="dialoMovieDetails(movie)">
             <img
               loading="lazy"
               src="{{ 'https://image.tmdb.org/t/p/w342' + movie.poster_path }}"
@@ -65,20 +62,19 @@
       <div class="card__movie">
         <a (click)="dialoMovieDetails(movie)" class="card_enlace">
           <img
-          *ngIf="movie.poster_path != null"
-          loading="lazy"
-          
+            *ngIf="movie.poster_path != null"
+            loading="lazy"
             src="{{ 'https://image.tmdb.org/t/p/w342' + movie.poster_path }}"
             alt=""
             class="img_poster"
           />
           <img
-          *ngIf="movie.poster_path ===null"
-          loading="lazy"
-          src="../../../../../assets/images/No-Image-Placeholder.svg.png"
-          alt=""
-          class="img_poster"
-        />
+            *ngIf="movie.poster_path === null"
+            loading="lazy"
+            src="../../../../../assets/images/No-Image-Placeholder.svg.png"
+            alt=""
+            class="img_poster"
+          />
         </a>
       </div>
     </div>

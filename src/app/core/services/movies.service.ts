@@ -157,18 +157,20 @@ export class MoviesService {
 
   removeFavMovie(idMovie: number, idUser: number): Observable<boolean> {
     let favMovie: any;
-  
+
     return this.getIdFavMovie(idMovie, idUser).pipe(
       switchMap((fav) => {
         favMovie = fav;
-  
+
         if (favMovie && favMovie.length > 0) {
           console.log(favMovie[0].id);
-  
-          return this.http.delete(`${this.UrlJsonServer}/MovieFavs/${favMovie[0].id}`).pipe(
-            map((response) => true),
-            catchError((error) => of(false))
-          );
+
+          return this.http
+            .delete(`${this.UrlJsonServer}/MovieFavs/${favMovie[0].id}`)
+            .pipe(
+              map((response) => true),
+              catchError((error) => of(false))
+            );
         } else {
           // No se encontró la película favorita
           return of(false);
@@ -177,10 +179,11 @@ export class MoviesService {
     );
   }
 
-
-  getIdFavMovie(idMovie: number, idUser:number): Observable<IFav[]> {
-    return this.http.get<IFav[]>(`${this.UrlJsonServer}/MovieFavs?idUser=${idUser}&idMovie=${idMovie}`).pipe(
-    );
+  getIdFavMovie(idMovie: number, idUser: number): Observable<IFav[]> {
+    return this.http
+      .get<IFav[]>(
+        `${this.UrlJsonServer}/MovieFavs?idUser=${idUser}&idMovie=${idMovie}`
+      )
+      .pipe();
   }
-
 }

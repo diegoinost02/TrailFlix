@@ -15,14 +15,15 @@ import { MovieDetailsComponent } from 'src/app/modules/home/components/movie-det
 export class MovieSearchedComponent implements OnInit, OnDestroy {
   user: User = new User();
 
-   movies: any = [];
+  movies: any = [];
+
   search: string = '';
 
   constructor(
     private movieSer: MoviesService,
     private route: ActivatedRoute,
     private dialog: MatDialog,
-    private userService:UsersService
+    private userService: UsersService
   ) {
     this.search = this.route.snapshot.paramMap.get('movie')!;
   }
@@ -37,7 +38,6 @@ export class MovieSearchedComponent implements OnInit, OnDestroy {
     this.movieSer.resetPageSearch();
   }
 
- 
   getMoviesSearch() {
     this.movieSer.SearchMovies(this.search).subscribe((movies) => {
       this.movies = movies;

@@ -1,5 +1,9 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
+import {
+  MAT_DIALOG_DATA,
+  MatDialog,
+  MatDialogRef,
+} from '@angular/material/dialog';
 
 import { Movie } from 'src/app/core/InterfaceMovies';
 
@@ -15,27 +19,18 @@ import { Popup } from 'src/app/core/Models';
   templateUrl: './movie-details.component.html',
   styleUrls: ['./movie-details.component.css'],
 })
-export class MovieDetailsComponent implements OnInit  {
+export class MovieDetailsComponent implements OnInit {
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
     private dialogRef: MatDialogRef<MovieDetailsComponent>,
     private api: MoviesService,
     private pipeUrl: PipeUrlService,
     private dialog: MatDialog
-  ) 
-
-  {
-
- 
-  }
+  ) {}
   ngOnInit(): void {
-
-    if(this.data.keyYoutube !== undefined)
-    {
+    if (this.data.keyYoutube !== undefined) {
       this.movie.idMovie = this.data.idMovie;
-    }
-    else
-    {
+    } else {
       this.movie.idMovie = this.data.id;
     }
     this.movie.poster_path = this.data.poster_path;
@@ -51,18 +46,17 @@ export class MovieDetailsComponent implements OnInit  {
 
   transformedlink: any;
 
-  movie:IFav = {
-
+  movie: IFav = {
     idMovie: this.data.id,
     poster_path: this.data.poster_path,
     overview: this.data.overview,
-    keyYoutube: "",
-  }
+    keyYoutube: '',
+  };
 
   dataPopUp: Popup = {
     title: '',
-    body: ''
-  }
+    body: '',
+  };
 
   getVideos() {
     this.api.getVideosIdMovie(this.movie.idMovie!).subscribe((videos) => {
@@ -83,7 +77,7 @@ export class MovieDetailsComponent implements OnInit  {
     this.transformedlink = this.pipeUrl.transform(this.youtubeLink);
   }
 
-  dialogTrailer(youtubeLink :any) {
+  dialogTrailer(youtubeLink: any) {
     this.dialog.open(MovieTrailerComponent, {
       width: '100%',
       height: '80%',
@@ -91,21 +85,16 @@ export class MovieDetailsComponent implements OnInit  {
     });
   }
 
-  addFavorite()
-  {
+  addFavorite() {
     this.dialogRef.close(this.movie);
-  
   }
 
-  closeDialog()
-  {
+  closeDialog() {
     this.dialogRef.close();
   }
 
-  removeFavorites()
-  {
-    this.dataPopUp.body = this.data.id,
-    this.dataPopUp.title = ""
+  removeFavorites() {
+    (this.dataPopUp.body = this.movie.idMovie!), (this.dataPopUp.title = '');
 
     this.dialogRef.close(this.dataPopUp);
   }

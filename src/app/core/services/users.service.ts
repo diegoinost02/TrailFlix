@@ -105,7 +105,6 @@ export class UsersService {
 //   if (user) {
 //     user.subscribe((user: User[]) => {
 //       this.user = user[0];
-//       console.log("user del token:" + JSON.stringify(this.user))
 //     })
 //   }
 // }

@@ -73,12 +73,52 @@
       "id": 7
     },
     {
-      "idMovie": 385687,
-      "poster_path": "/qDRrP4NATGTWH8ORJV6T0BeoIhQ.jpg",
-      "overview": "Dom Toretto y su familia se convierten en el objetivo del vengativo hijo del capo de las drogas Hernán Reyes.",
-      "keyYoutube": "",
+      "idMovie": 926393,
+      "poster_path": "/eJKmexmCLwuxOxlAURSMnBVkfmY.jpg",
+      "overview": "Desde que renunció a su vida como asesino del gobierno, Robert McCall (Denzel Washington) ha luchado para reconciliarse con las cosas horribles que ha hecho en el pasado y encuentra un extraño consuelo en hacer justicia en nombre de los oprimidos. Mientras se encuentra en su casa en el sur de Italia, descubre que sus nuevos amigos están bajo el control de los jefes del crimen local. A medida que los acontecimientos comienzan a complicarse, McCall entiende lo que tiene que hacer: convertirse en el protector de sus amigos enfrentándose a la temida mafia.",
+      "keyYoutube": "https://www.youtube.com/embed/fQfrzHFmVe8",
       "idUser": 2,
       "id": 8
+    },
+    {
+      "idMovie": 939335,
+      "poster_path": "/rLu0yO1qCZnWevzofNNFfzJ30tM.jpg",
+      "overview": "El policía Jake Rosser presencia el impactante asesinato de su compañero por un misterioso asaltante. Mientras investiga la identidad del tirador, descubre una gran conspiración.",
+      "keyYoutube": "https://www.youtube.com/embed/rYY5QdEGEZw",
+      "idUser": 2,
+      "id": 9
+    },
+    {
+      "idMovie": 872585,
+      "poster_path": "/ncKCQVXgk4BcQV6XbvesgZ2zLvZ.jpg",
+      "overview": "Película sobre el físico J. Robert Oppenheimer y su papel como desarrollador de la bomba atómica. Basada en el libro 'American Prometheus: The Triumph and Tragedy of J. Robert Oppenheimer' de Kai Bird y Martin J. Sherwin.",
+      "keyYoutube": "https://www.youtube.com/embed/uYPbbksJxIg",
+      "idUser": 2,
+      "id": 10
+    },
+    {
+      "idMovie": 968051,
+      "poster_path": "/x0ryPlzZjpOojEAuGrre2lFuBv6.jpg",
+      "overview": "En 1956 en Francia, un sacerdote es asesinado y parece que un mal se está extendiendo. La hermana Irene una vez más se encuentra cara a cara con una fuerza demoníaca.",
+      "keyYoutube": "https://www.youtube.com/embed/QF-oyCwaArU",
+      "idUser": 2,
+      "id": 11
+    },
+    {
+      "idMovie": 762430,
+      "poster_path": "/mhLYcyxuhb82ttYDEU5DM8b3Hy3.jpg",
+      "overview": "Un ejecutivo de un banco recibe, mientras conduce a sus hijos a la escuela, una amenaza de bomba dentro de su auto, el cual explotará si se detienen o salen del vehículo antes de conseguir una elevada suma de dinero. Remake de la película española de 2015 \"El Desconocido\".",
+      "keyYoutube": "https://www.youtube.com/embed/Sxyzdo-RBKc",
+      "idUser": 2,
+      "id": 12
+    },
+    {
+      "idMovie": 951491,
+      "poster_path": "/epN0x9JTf3esk1FO8DWkhlE4Ax5.jpg",
+      "overview": "Entre los acontecimientos de 'Saw' y 'Saw II', un enfermo y desesperado John Kramer viaja a México para someterse a un procedimiento médico arriesgado y experimental con la esperanza de encontrar una cura milagrosa para su cáncer, sólo para descubrir que toda la operación es una estafa para robar a  los más vulnerables. Armado con un nuevo propósito, el infame asesino en serie regresa a su trabajo, dándole la vuelta a los estafadores en su forma visceral característica a través de trampas tortuosas, trastornadas e ingeniosas.",
+      "keyYoutube": "https://www.youtube.com/embed/t3PzUo4P21c",
+      "idUser": 2,
+      "id": 13
     }
   ]
 }
