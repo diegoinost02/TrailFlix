@@ -10,13 +10,13 @@ export interface IFav{
 
     id?:number | null;
     idUser?:number| null;
-    idMovie?:string;
-    linkPoster:string;
+    idMovie?:number;
+    poster_path:string;
     keyYoutube:string;
     overview:string;
 }
 
 export interface IPopup{
-    title: string;
-    body: string;
+    title: string | number;
+    body: string | number;
 }

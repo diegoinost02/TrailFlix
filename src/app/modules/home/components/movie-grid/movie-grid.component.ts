@@ -4,6 +4,8 @@ import { MoviesService } from 'src/app/core/services/movies.service';
 import { MovieDetailsComponent } from '../movie-details/movie-details.component';
 import { Movie } from 'src/app/core/InterfaceMovies';
 import { IFav } from 'src/app/core/Interfaces';
+import { Popup, User } from 'src/app/core/Models';
+import { UsersService } from 'src/app/core/services/users.service';
 
 @Component({
   selector: 'app-movie-grid',
@@ -11,13 +13,16 @@ import { IFav } from 'src/app/core/Interfaces';
   styleUrls: ['./movie-grid.component.css'],
 })
 export class MovieGridComponent implements OnInit, OnDestroy {
-  constructor(private movieSer: MoviesService, private dialog: MatDialog) {}
+  constructor(
+    private movieSer: MoviesService,
+    private dialog: MatDialog,
+    private userService: UsersService
+  ) {}
 
   ngOnInit(): void {
     this.getMovies();
     this.getBanner();
-
-    this.getFavMovies(2);
+    this.loadData();
   }
 
   ngOnDestroy(): void {
@@ -28,19 +33,34 @@ export class MovieGridComponent implements OnInit, OnDestroy {
   banner: any = [];
   favMovies: any = [];
 
+  user: User = new User();
+
   ///PARA TEST
-  search: string = 'Transformers';
-  id: number = 2;
+  search: string = '';
 
   movieFav: IFav = {
-    idUser: 2,
-    idMovie: '5070s89',
-    linkPoster: '/A4j8S6moJS2zNtRR8oWF08gRnL5.jpg',
-    keyYoutube: 'X4d_v-HyR4o',
-    overview:
-      "Recently fired and desperate for work, a troubled young man named Mike agrees to take a position as a night security guard at an abandoned theme restaurant: Freddy Fazbear's Pizzeria. But he soon discovers that nothing at Freddy's is what it seems.",
+    idUser: 0,
+    idMovie: 0,
+    poster_path: '',
+    keyYoutube: '',
+    overview: '',
   };
   ///TEST
+
+  dataPopUp: Popup = {
+    title: '',
+    body: '',
+  };
+
+  loadData() {
+    const user = this.userService.getCurrentUser();
+    if (user) {
+      user.subscribe((user: User[]) => {
+        this.user = user[0];
+        this.getFavMovies();
+      });
+    }
+  }
 
   getMovies() {
     this.movieSer.getPeliculasTrendig().subscribe((movies) => {
@@ -80,29 +100,54 @@ export class MovieGridComponent implements OnInit, OnDestroy {
     }
   }
 
-  getFavMovies(id: number) {
-    this.movieSer.getFavMovies(this.id).subscribe((favMovies) => {
+  getFavMovies() {
+    this.movieSer.getFavMovies(this.user.id!).subscribe((favMovies) => {
       this.favMovies = favMovies;
       console.log(this.favMovies);
     });
   }
 
-  deleteFavMovie(id: number) {
-    this.movieSer.removeFavMovie(id).subscribe((data: any) => {
-      this.favMovies = this.favMovies.filter((movie: IFav) => movie.id !== id);
+  deleteFavMovie(idMovie: number | any, idUser: number) {
+    this.movieSer.removeFavMovie(idMovie, idUser).subscribe((data: any) => {
+      this.favMovies = this.favMovies.filter(
+        (movie: IFav) => movie.id !== idMovie
+      );
 
       console.log('Se elimino de la db', data);
+      this.getFavMovies();
     });
   }
 
   ///DIALOG
 
   dialoMovieDetails(movie: Movie) {
-    this.dialog.open(MovieDetailsComponent, {
-      width: '100%',
+    const dialogRef = this.dialog.open(MovieDetailsComponent, {
+      width: '50%',
       height: 'auto',
       data: movie,
       backdropClass: 'background-dialog',
+      disableClose: true,
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result && result.linkPoster !== undefined) {
+        this.movieFav = result;
+        this.movieFav.idUser = this.user.id;
+        console.log(this.movieFav);
+        this.addFavMovie();
+
+        this.getFavMovies();
+        console.log('Se guardo el favorito');
+        console.log('Se actualizaron los favoritos');
+      } else if (result) {
+        this.dataPopUp = result;
+
+        this.dataPopUp.title = this.user.id!;
+
+        console.log(this.dataPopUp);
+
+        this.deleteFavMovie(this.dataPopUp.body, this.dataPopUp.title);
+      }
     });
   }
 }
