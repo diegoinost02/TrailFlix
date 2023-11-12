@@ -13,8 +13,7 @@ import { AlertPopupComponent } from 'src/app/shared/alert-popup/alert-popup.comp
 })
 export class EditNameComponent implements OnInit {
 
-  constructor(private router: Router, private usersService: UsersService, private formBuilder: FormBuilder, private dialog: MatDialog) { }
-
+  constructor(private router: Router, private usersService: UsersService, private formBuilder: FormBuilder, private dialog: MatDialog) {}
   user: User = new User();
 
   dataAlert: Popup = {

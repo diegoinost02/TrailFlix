@@ -14,7 +14,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     NavBarComponent,
     FooterComponent,
     AlertPopupComponent
-   
   ],
   imports: [
     CommonModule,

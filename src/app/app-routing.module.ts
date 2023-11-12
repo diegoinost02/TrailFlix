@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { authGuardGuard } from './core/guards/auth-guard.guard';
 
 const routes: Routes = [
   {
@@ -12,19 +13,23 @@ const routes: Routes = [
   },
   {
     path:'home',
-    loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule)
+    loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule),
+    canActivate: [authGuardGuard]
   },
   {
     path: 'profile',
-    loadChildren: () => import('./modules/profile/profile.module').then(m => m.ProfileModule)
+    loadChildren: () => import('./modules/profile/profile.module').then(m => m.ProfileModule),
+    canActivate: [authGuardGuard]
   },
   {
     path: 'search',
-    loadChildren: () => import('./modules/search/search.module').then(m => m.SearchModule)
+    loadChildren: () => import('./modules/search/search.module').then(m => m.SearchModule),
+    canActivate: [authGuardGuard]
   },
   {
     path: 'search/:movie',
     loadChildren: () => import('./modules/search/search.module').then(m => m.SearchModule),
+    canActivate: [authGuardGuard]
   },
   {
     path: '**',

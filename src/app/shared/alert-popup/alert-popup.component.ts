@@ -9,6 +9,6 @@ import { Popup } from 'src/app/core/Models';
 })
 export class AlertPopupComponent {
 
-  constructor(@Inject(MAT_DIALOG_DATA)public data: Popup, private dialogRef: MatDialogRef<AlertPopupComponent>) { }
+  constructor(@Inject(MAT_DIALOG_DATA)public data: Popup, private dialogRef: MatDialogRef<AlertPopupComponent>) {}
 
 }

@@ -13,7 +13,7 @@ export class UsersService {
 
   constructor(private http: HttpClient, private router: Router) { }
 
-  // functions to auth
+  // funciones de autenticación
 
   public getUserToAuth(user: User): Observable<User[]> {
     return this.http.get<User[]>(`${this.baseUrl}/Users?email=${user.email}&password=${user.password}`);
@@ -27,7 +27,7 @@ export class UsersService {
     return this.http.post<User[]>(`${this.baseUrl}/Users`, user)
   }
 
-  //functions for token
+  //funciones para token de autenticación
 
   public generateToken(user: User): string {
     return 'Bearer' + user.id;
@@ -65,7 +65,7 @@ export class UsersService {
     this.router.navigate(['']);
   }
 
-  //functions to edit user
+  //funciones para edit
 
   public editUser(id: number, updateUser: User): Observable<boolean> {
     return this.http.put<boolean>(`${this.baseUrl}/Users/${id}`, updateUser)
@@ -81,6 +81,13 @@ export class UsersService {
     catchError(error => of(false))
     );
   }
+
+  //funcion para guard
+
+  public checkAuthentication(): boolean{
+    return localStorage.getItem('token') ? true : false;
+  }
+
 }
 
 //ejemplo de implementacion
