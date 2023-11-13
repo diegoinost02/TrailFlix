@@ -68,10 +68,15 @@ export class MovieSearchedComponent implements OnInit, OnDestroy {
   }
 
   appendSearch() {
-    this.movieSer.SearchMovies(this.search).subscribe((movies) => {
+
+    if(this.search)
+    {
+      this.movieSer.SearchMovies(this.search).subscribe((movies) => {
       this.movies = [...this.movies, ...movies];
       console.log(this.movies);
     });
+    }
+    
   }
   //USER ACTUAL
   loadData() {

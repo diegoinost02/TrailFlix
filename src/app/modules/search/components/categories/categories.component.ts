@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { elementAt } from 'rxjs';
 import { Movie } from 'src/app/core/InterfaceMovies';
 import { IFav } from 'src/app/core/Interfaces';
 import { Popup, User } from 'src/app/core/Models';
@@ -16,12 +17,15 @@ export class CategoriesComponent implements OnInit {
   user: User = new User();
 
 
-  constructor( private apiMovie : MoviesService, private userService:UsersService, private dialog: MatDialog,)
+
+  constructor( private apiMovie : MoviesService, private userService:UsersService, private dialog: MatDialog)
   {
 
   }
   ngOnInit(): void {
     this.loadData();
+
+    this.genreAction();
   }
 
   genreMovie:any = [];
@@ -47,6 +51,7 @@ export class CategoriesComponent implements OnInit {
   {
     this.apiMovie.genreType = `28`
 
+  
     this.genreMovie = this.apiMovie.getMoviesbygenre().subscribe((movies) =>
     {
       this.genreMovie = movies;
@@ -58,6 +63,8 @@ export class CategoriesComponent implements OnInit {
   }
   genreAdventure ()
   {
+
+
     this.apiMovie.genreType = `12`
 
     this.genreMovie = this.apiMovie.getMoviesbygenre().subscribe((movies) =>
