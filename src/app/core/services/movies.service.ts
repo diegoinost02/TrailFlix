@@ -14,11 +14,15 @@ export class MoviesService {
   private PageNPlaying = 1;
   private PagePopular = 1;
   private PageSearch = 1;
+  private PageGenre = 1;
 
-  public cargando = false;
-  public cargandoPopular = false;
-  public cargandoVideo = false;
-  public cargandoSearch = false;
+  private cargando = false;
+  private cargandoPopular = false;
+  private cargandoVideo = false;
+  private cargandoSearch = false;
+  private cargandoGenre = false;
+
+  public genreType = '' ;
 
   private apikey: string = '13ee2b3b1810d881d34a3d2f4351f448'; ///Buscar key nuestra
   private language: string = 'es-ES';
@@ -55,6 +59,17 @@ export class MoviesService {
       api_key: this.apikey,
       language: 'es-ES',
       page: this.PageSearch.toString(),
+    };
+  }
+  get paramsGenre() {
+    return {
+      api_key: this.apikey,
+      language: 'es-ES',
+      page: this.PageNPlaying.toString(),
+      include_adult: false,
+      include_video: false,
+      sort_by: 'popularity.desc',
+      with_genres: this.genreType,
     };
   }
 
@@ -133,6 +148,24 @@ export class MoviesService {
         tap(() => {
           this.PageSearch += 1;
           this.cargandoSearch = false;
+        })
+      );
+  }
+  getMoviesbygenre(): Observable<Movie[]> {
+    console.log('cargandoGenre');
+    if (this.cargandoGenre) {
+      return of([]);
+    }
+    this.cargandoGenre = true;
+
+    return this.http
+      .get<PeliculasResponse>(`${this.baseURL}/discover/movie`, {
+        params: this.paramsGenre,
+      })
+      .pipe(
+        map((res) => res.results),
+        tap(() => {
+          this.cargandoGenre = false;
         })
       );
   }

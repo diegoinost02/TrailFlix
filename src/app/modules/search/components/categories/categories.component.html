@@ -1,0 +1,60 @@
+<div class="container mb-3">
+  <div class="row">
+    <div class="col text-center p-5 card-categoria m-1" (click)="genreAction()">
+      <div class="div">Accion</div>
+    </div>
+    <div
+      class="col text-center p-5 card-categoria m-1"
+      (click)="genreAdventure()"
+    >
+      <div class="div">Aventura</div>
+    </div>
+    <div class="col text-center p-5 card-categoria m-1" (click)="genreComedy()">
+      <div class="div">Comedia</div>
+    </div>
+    <div
+      class="col text-center p-5 card-categoria m-1"
+      (click)="genreSuspense()"
+    >
+      <div class="div">Suspenso</div>
+    </div>
+    <div class="col text-center p-5 card-categoria m-1" (click)="genreDrama()">
+      <div class="div">Drama</div>
+    </div>
+    <div class="col text-center p-5 card-categoria m-1" (click)="genreFamily()">
+      <div class="div">Familiares</div>
+    </div>
+
+    <div class="container">
+      <div class="row" *ngIf="genreClicked">
+        <br />
+        <br />
+        <div
+          class="col-6 col-sm-4 col-lg-3 col-xl-3 g-4"
+          *ngFor="let movie of genreMovie"
+        >
+          <div class="card__movie">
+            <a class="card_enlace" (click)="dialoMovieDetails(movie)">
+              <img
+                *ngIf="movie.poster_path != null"
+                loading="lazy"
+                src="{{
+                  'https://image.tmdb.org/t/p/w500' + movie.poster_path
+                }}"
+                alt=""
+                class="img-fluid"
+              />
+              <img
+                *ngIf="movie.poster_path === null"
+                loading="lazy"
+                src="../../../../../assets/images/No-Image-Placeholder.svg.png"
+                alt=""
+                class="img-fluid"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

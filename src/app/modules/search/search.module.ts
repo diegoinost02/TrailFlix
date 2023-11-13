@@ -7,6 +7,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { MovieSearchedComponent } from './components/movie-searched/movie-searched.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { MatDialogModule } from '@angular/material/dialog';
+import { CategoriesComponent } from './components/categories/categories.component';
 
 
 
@@ -14,6 +15,7 @@ import { MatDialogModule } from '@angular/material/dialog';
   declarations: [
     PageComponent,
     MovieSearchedComponent,
+    CategoriesComponent,
    
   
   ],

@@ -1,5 +1,5 @@
 export interface PeliculasResponse {
-    dates:         Dates;
+    dates:         Dates | null;
     page:          number;
     results:       Movie[];
     total_pages:   number;

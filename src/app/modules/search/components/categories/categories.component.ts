@@ -1,6 +1,5 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ActivatedRoute } from '@angular/router';
 import { Movie } from 'src/app/core/InterfaceMovies';
 import { IFav } from 'src/app/core/Interfaces';
 import { Popup, User } from 'src/app/core/Models';
@@ -9,19 +8,25 @@ import { UsersService } from 'src/app/core/services/users.service';
 import { MovieDetailsComponent } from 'src/app/modules/home/components/movie-details/movie-details.component';
 
 @Component({
-  selector: 'app-movie-searched',
-  templateUrl: './movie-searched.component.html',
-  styleUrls: ['./movie-searched.component.css'],
+  selector: 'app-categories',
+  templateUrl: './categories.component.html',
+  styleUrls: ['./categories.component.css']
 })
-export class MovieSearchedComponent implements OnInit, OnDestroy {
+export class CategoriesComponent implements OnInit {
   user: User = new User();
 
-  //DONDE SE ALMACENA LAS PELICULAS, EN LA BUSUQEDA
-  movies: any = [];
 
-  search: string = '';
+  constructor( private apiMovie : MoviesService, private userService:UsersService, private dialog: MatDialog,)
+  {
 
-  favMovies: any = [];
+  }
+  ngOnInit(): void {
+    this.loadData();
+  }
+
+  genreMovie:any = [];
+  favMovies:any = [];
+
 
   movieFav: IFav = {
     idUser: 0,
@@ -36,44 +41,92 @@ export class MovieSearchedComponent implements OnInit, OnDestroy {
     body: '',
   };
 
-  constructor(
-    private movieSer: MoviesService,
-    private route: ActivatedRoute,
-    private dialog: MatDialog,
-    private userService: UsersService
-  ) {
-    this.search = this.route.snapshot.paramMap.get('movie')!;
+  genreClicked:boolean = false;
+
+  genreAction ()
+  {
+    this.apiMovie.genreType = `28`
+
+    this.genreMovie = this.apiMovie.getMoviesbygenre().subscribe((movies) =>
+    {
+      this.genreMovie = movies;
+      console.log(this.genreMovie);
+
+      this.genreClicked = true;
+
+    })
+  }
+  genreAdventure ()
+  {
+    this.apiMovie.genreType = `12`
+
+    this.genreMovie = this.apiMovie.getMoviesbygenre().subscribe((movies) =>
+    {
+      this.genreMovie = movies;
+      console.log(this.genreMovie);
+
+      this.genreClicked = true;
+
+
+    })
+  }
+  genreComedy ()
+  {
+    this.apiMovie.genreType = `35`
+
+    this.genreMovie = this.apiMovie.getMoviesbygenre().subscribe((movies) =>
+    {
+      this.genreMovie = movies;
+      console.log(this.genreMovie);
+     
+      this.genreClicked = true;
+
+
+    })
+  }
+  genreSuspense ()
+  {
+    this.apiMovie.genreType = `53`
+
+    this.genreMovie = this.apiMovie.getMoviesbygenre().subscribe((movies) =>
+    {
+      this.genreMovie = movies;
+      console.log(this.genreMovie);
+      
+      this.genreClicked = true;
+
+
+    })
+  }
+  genreDrama ()
+  {
+    this.apiMovie.genreType = `18`
+
+    this.genreMovie = this.apiMovie.getMoviesbygenre().subscribe((movies) =>
+    {
+      this.genreMovie = movies;
+      console.log(this.genreMovie);
+      
+      this.genreClicked = true;
+
+
+    })
+  }
+  genreFamily ()
+  {
+    this.apiMovie.genreType = `14`
+
+    this.genreMovie = this.apiMovie.getMoviesbygenre().subscribe((movies) =>
+    {
+      this.genreMovie = movies;
+      console.log(this.genreMovie);
+
+      this.genreClicked = true;
+
+
+    })
   }
 
-  ngOnInit(): void {
-    if (this.search) {
-      this.getMoviesSearch();
-    }
-
-    console.log(this.search);
-    this.loadData();
-    this.getFavMovies();
-  }
-  //RESET PAGE SEARCH
-  ngOnDestroy(): void {
-    this.movieSer.resetPageSearch();
-  }
-
-  //BUSCAR Y AGREGAR SEARCH
-  getMoviesSearch() {
-    this.movieSer.SearchMovies(this.search).subscribe((movies) => {
-      this.movies = movies;
-      console.log(this.movies);
-    });
-  }
-
-  appendSearch() {
-    this.movieSer.SearchMovies(this.search).subscribe((movies) => {
-      this.movies = [...this.movies, ...movies];
-      console.log(this.movies);
-    });
-  }
-  //USER ACTUAL
   loadData() {
     const user = this.userService.getCurrentUser();
     if (user) {
@@ -89,7 +142,7 @@ export class MovieSearchedComponent implements OnInit, OnDestroy {
     );
 
     if (!isDuplicated) {
-      this.movieSer.putFavMovie(this.movieFav).subscribe((updatedFavMovies) => {
+      this.apiMovie.putFavMovie(this.movieFav).subscribe((updatedFavMovies) => {
         this.favMovies.push(updatedFavMovies);
       });
       console.log('agregado a favoritos');
@@ -99,14 +152,14 @@ export class MovieSearchedComponent implements OnInit, OnDestroy {
   }
 
   getFavMovies() {
-    this.movieSer.getFavMovies(this.user.id!).subscribe((favMovies) => {
+    this.apiMovie.getFavMovies(this.user.id!).subscribe((favMovies) => {
       this.favMovies = favMovies;
       console.log(this.favMovies);
     });
   }
 
   deleteFavMovie(idMovie: number | any, idUser: number) {
-    this.movieSer.removeFavMovie(idMovie, idUser).subscribe((data: any) => {
+    this.apiMovie.removeFavMovie(idMovie, idUser).subscribe((data: any) => {
       this.favMovies = this.favMovies.filter(
         (movie: IFav) => movie.id !== idMovie
       );
@@ -148,4 +201,8 @@ export class MovieSearchedComponent implements OnInit, OnDestroy {
       }
     });
   }
+
+
+
 }
+
