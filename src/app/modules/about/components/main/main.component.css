@@ -36,12 +36,15 @@
     /* aspect-ratio: 1/1.2; */
 }
 
-.border-img-right {
+.border-img-first {
     border-radius: 80px 0;
 }
 
-.border-img-left {
+.border-img-second {
     border-radius: 80px 0 0px 80px;
+}
+.border-img-third {
+    border-radius: 0 80px 0px 80px;
 }
 
 h2 {
@@ -86,11 +89,14 @@ h2 {
     .text {
         font-size: 15px;
     }
-    .border-img-right {
+    .border-img-first {
         border-radius: 5px;
     }
 
-    .border-img-left {
+    .border-img-second {
+        border-radius: 5px;
+    }
+    .border-img-third {
         border-radius: 5px;
     }
 
