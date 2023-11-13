@@ -30,8 +30,6 @@ export class RegisterComponent implements OnInit{
     -Añadir peliculas a favoritos
     
     Los derechos de propiedad intelectual sobre la aplicación, incluidos los códigos fuente y los contenidos, son de propiedad de Juan Manuel Tretta Alvo y Diego Ezequiel Inostroza. La aplicación se distribuye bajo una licencia de código abierto, lo que permite a los usuarios descargar, modificar y redistribuir el código fuente, pero no permite a los usuarios reclamar la propiedad de la aplicación.
-
-    Para cualquier consulta o información, los Usuarios podrán ponerse en contacto con nosotros a través de: https://www.linkedin.com/in/diego-inostroza
     
     La aplicación está destinada exclusivamente para uso personal y no comercial. Los usuarios no están autorizados a emplear la aplicación con propósitos comerciales o lucrativos, ya que esta ha sido desarrollada como parte de un proyecto universitario.`
     }
