@@ -6,6 +6,7 @@ import { Movie } from 'src/app/core/InterfaceMovies';
 import { IFav } from 'src/app/core/Interfaces';
 import { Popup, User } from 'src/app/core/Models';
 import { UsersService } from 'src/app/core/services/users.service';
+import { FavServiceService } from 'src/app/core/services/fav-service.service';
 
 @Component({
   selector: 'app-movie-grid',
@@ -36,7 +37,8 @@ export class MovieGridComponent implements OnInit, OnDestroy {
   constructor(
     private movieSer: MoviesService,
     private dialog: MatDialog,
-    private userService: UsersService
+    private userService: UsersService,
+    private favSer: FavServiceService
   ) {}
 
   ngOnInit(): void {
@@ -80,7 +82,7 @@ export class MovieGridComponent implements OnInit, OnDestroy {
     });
   }
 
-  ///FAV MOVIE FUNCIONES
+  ///FAV MOVIE FUNCIONES son distintas por la asincronia
 
   addFavMovie() {
     let isDuplicated: boolean = this.favMovies.some(
@@ -114,6 +116,7 @@ export class MovieGridComponent implements OnInit, OnDestroy {
       this.getFavMovies();
     });
   }
+
 
   ///DIALOG
 

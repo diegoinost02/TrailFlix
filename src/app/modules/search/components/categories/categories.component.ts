@@ -4,6 +4,7 @@ import { elementAt } from 'rxjs';
 import { Movie } from 'src/app/core/InterfaceMovies';
 import { IFav } from 'src/app/core/Interfaces';
 import { Popup, User } from 'src/app/core/Models';
+import { FavServiceService } from 'src/app/core/services/fav-service.service';
 import { MoviesService } from 'src/app/core/services/movies.service';
 import { UsersService } from 'src/app/core/services/users.service';
 import { MovieDetailsComponent } from 'src/app/modules/home/components/movie-details/movie-details.component';
@@ -18,7 +19,7 @@ export class CategoriesComponent implements OnInit {
 
 
 
-  constructor( private apiMovie : MoviesService, private userService:UsersService, private dialog: MatDialog)
+  constructor( private apiMovie : MoviesService, private userService:UsersService, private dialog: MatDialog, private favSer:FavServiceService)
   {
 
   }
@@ -143,37 +144,56 @@ export class CategoriesComponent implements OnInit {
     }
   }
   //FAV MOVIES
-  addFavMovie() {
-    let isDuplicated: boolean = this.favMovies.some(
-      (movie: IFav) => movie.idMovie === this.movieFav.idMovie
-    );
+  
 
-    if (!isDuplicated) {
-      this.apiMovie.putFavMovie(this.movieFav).subscribe((updatedFavMovies) => {
-        this.favMovies.push(updatedFavMovies);
-      });
-      console.log('agregado a favoritos');
-    } else {
-      console.log('Ya existe en la lista de fav');
-    }
+  // addFavMovie() {
+  //   let isDuplicated: boolean = this.favMovies.some(
+  //     (movie: IFav) => movie.idMovie === this.movieFav.idMovie
+  //   );
+
+  //   if (!isDuplicated) {
+  //     this.apiMovie.putFavMovie(this.movieFav).subscribe((updatedFavMovies) => {
+  //       this.favMovies.push(updatedFavMovies);
+  //     });
+  //     console.log('agregado a favoritos');
+  //   } else {
+  //     console.log('Ya existe en la lista de fav');
+  //   }
+  // }
+
+  addFavMovie()
+  {
+    this.favMovies =  this.favSer.addFavMovie(this.favMovies,this.movieFav);
   }
 
-  getFavMovies() {
-    this.apiMovie.getFavMovies(this.user.id!).subscribe((favMovies) => {
-      this.favMovies = favMovies;
-      console.log(this.favMovies);
-    });
+  // getFavMovies() {
+  //   this.apiMovie.getFavMovies(this.user.id!).subscribe((favMovies) => {
+  //     this.favMovies = favMovies;
+  //     console.log(this.favMovies);
+  //   });
+  // }
+
+  getFavMovies()
+  {
+    this.favMovies = this.favSer.getFavMovies(this.favMovies,this.user);
   }
 
-  deleteFavMovie(idMovie: number | any, idUser: number) {
-    this.apiMovie.removeFavMovie(idMovie, idUser).subscribe((data: any) => {
-      this.favMovies = this.favMovies.filter(
-        (movie: IFav) => movie.id !== idMovie
-      );
+  // deleteFavMovie(idMovie: number | any, idUser: number) {
+  //   this.apiMovie.removeFavMovie(idMovie, idUser).subscribe((data: any) => {
+  //     this.favMovies = this.favMovies.filter(
+  //       (movie: IFav) => movie.id !== idMovie
+  //     );
 
-      console.log('Se elimino de la db', data);
-      this.getFavMovies();
-    });
+  //     console.log('Se elimino de la db', data);
+  //     this.getFavMovies();
+  //   });
+  // }
+
+  deleteFavMovie(idMovie: number | any, idUser: number)
+  {
+    this.favSer.deleteFavMovie(idMovie,idUser);
+
+    this.getFavMovies()
   }
 
   dialoMovieDetails(movie: Movie) {

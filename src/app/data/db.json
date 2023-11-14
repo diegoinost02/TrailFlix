@@ -73,14 +73,6 @@
       "id": 14
     },
     {
-      "idMovie": 91314,
-      "poster_path": "/owqV5Qo2DMMomfB1fS6xYWv3yEh.jpg",
-      "overview": "Han pasado 4 años desde la tragedia de Chicago y la humanidad sigue reparando los destrozos, pero tanto los Autobots como los Decepticons han desaparecido de la faz de la Tierra. Ahora el Gobierno de los Estados Unidos está utilizando la tecnología rescatada en el asedio de Chicago para desarrollar sus propios Transformers. Al frente del proyecto está Joshua Joyce, un arrogante diseñador que piensa que los Autobots son \"basura tecnológica\" y se cree capaz de fabricar unos robots infinitamente más avanzados. Mientras tanto, Cade Yeager, un mécánico inventor, encuentra un Marmon semi-trailer. Al intentar repararlo, descubre que el camión no solo era un Transformer, sino también el mismísimo Optimus Prime, líder de los Autobots. Lo que Cade ignora son las consecuencias que pueden derivarse de este hallazgo.",
-      "keyYoutube": "https://www.youtube.com/embed/S30VkLn5a2o",
-      "idUser": 2,
-      "id": 16
-    },
-    {
       "idMovie": 346698,
       "poster_path": "/fNtqD4BTFj0Bgo9lyoAtmNFzxHN.jpg",
       "overview": "Barbie vive en Barbieland donde todo es ideal y lleno de música y color. Un buen día decide conocer el mundo real. Cuando el CEO de Mattel se entere, tratará de evitarlo a toda costa y devolver a Barbie a una caja.",
@@ -89,12 +81,20 @@
       "id": 17
     },
     {
-      "idMovie": 346698,
-      "poster_path": "/fNtqD4BTFj0Bgo9lyoAtmNFzxHN.jpg",
-      "overview": "Barbie vive en Barbieland donde todo es ideal y lleno de música y color. Un buen día decide conocer el mundo real. Cuando el CEO de Mattel se entere, tratará de evitarlo a toda costa y devolver a Barbie a una caja.",
-      "keyYoutube": "https://www.youtube.com/embed/Y1IgAEejvqM",
+      "idMovie": 9381,
+      "poster_path": "/3IBB0Z2dZAWZNkRq6hF9pJsmMtE.jpg",
+      "overview": "Tras la caída de las instituciones mundiales más importantes, la humanidad vive en un estado de anarquía total. El aventurero y mercenario Hugo Cornelius Toorop recibe la misión de escoltar a una bella joven desde un remoto convento de Rusia hasta Nueva York. Cuanto más se acerca a su destino, más grande es su sospecha de que lo que debe proteger no es solo una simple muchacha.",
+      "keyYoutube": "https://www.youtube.com/embed/_wW9pYbRkjk",
       "idUser": 2,
       "id": 18
+    },
+    {
+      "idMovie": 872585,
+      "poster_path": "/ncKCQVXgk4BcQV6XbvesgZ2zLvZ.jpg",
+      "overview": "Película sobre el físico J. Robert Oppenheimer y su papel como desarrollador de la bomba atómica. Basada en el libro 'American Prometheus: The Triumph and Tragedy of J. Robert Oppenheimer' de Kai Bird y Martin J. Sherwin.",
+      "keyYoutube": "https://www.youtube.com/embed/uYPbbksJxIg",
+      "idUser": 2,
+      "id": 19
     }
   ]
 }
