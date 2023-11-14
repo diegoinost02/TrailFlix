@@ -26,7 +26,7 @@ export class CategoriesComponent implements OnInit {
   ngOnInit(): void {
     this.loadData();
 
-    this.genreAction();
+    // this.genreAction();
   }
 
   genreMovie:any = [];
