@@ -2,7 +2,7 @@
   "users": [
     {
       "id": 2,
-      "userName": "Juan Manuel",
+      "userName": "Juan",
       "email": "juan@gmail.com",
       "password": "juantretta",
       "isSubscribed": true
@@ -11,7 +11,14 @@
       "id": 3,
       "userName": "diego",
       "email": "diego@gmail.com",
-      "password": "diego123",
+      "password": "diegoinost",
+      "isSubscribed": true
+    },
+    {
+      "id": 4,
+      "userName": "agus1",
+      "email": "agus@gmail.com",
+      "password": "123",
       "isSubscribed": true
     }
   ],
@@ -89,12 +96,68 @@
       "id": 17
     },
     {
+      "idMovie": 507089,
+      "poster_path": "/t6RSJ1z8bDEYpk4fLwxfkXciUak.jpg",
+      "overview": "Un guardia de seguridad con problemas comienza a trabajar en Freddy Fazbear's Pizza. Mientras pasa su primera noche en el trabajo, se da cuenta de que el turno de noche en Freddy's no será tan fácil de superar.",
+      "keyYoutube": "https://www.youtube.com/embed/X4d_v-HyR4o",
+      "idUser": 2,
+      "id": 19
+    },
+    {
+      "idMovie": 507089,
+      "poster_path": "/t6RSJ1z8bDEYpk4fLwxfkXciUak.jpg",
+      "overview": "Un guardia de seguridad con problemas comienza a trabajar en Freddy Fazbear's Pizza. Mientras pasa su primera noche en el trabajo, se da cuenta de que el turno de noche en Freddy's no será tan fácil de superar.",
+      "keyYoutube": "https://www.youtube.com/embed/X4d_v-HyR4o",
+      "idUser": 4,
+      "id": 20
+    },
+    {
+      "idMovie": 575264,
+      "poster_path": "/83sGKvCv2T2CulYbd40Aeduc7n2.jpg",
+      "overview": "Ethan Hunt (Tom Cruise) y la IMF emprenden la misión más peligrosa a la que nunca se han enfrentado: rastrear una nueva y aterradora arma que amenaza a toda la humanidad antes de que caiga en las manos de un enemigo todopoderoso y misterioso.",
+      "keyYoutube": "https://www.youtube.com/embed/HurjfO_TDlQ",
+      "idUser": 4,
+      "id": 22
+    },
+    {
+      "idMovie": 299054,
+      "poster_path": "/2jmE7xH0R0dikmc8iplCPCit4MD.jpg",
+      "overview": "Cuarta entrega de la saga Los Mercenarios. El veterano mercenario Barney “Esquizo” Ross (Sylvester Stallone) y su equipo de estrellas, formado por los hombres más duros (Jason Statham, Dolph Lundgren, 50 Cent, Megan Fox…), afrontan un nuevo desafío, en una trama cargada de acción. Para superarlo y salir airosos, deberán recurrir a su ingenio, experiencia y a la fuerza bruta que los caracteriza.",
+      "keyYoutube": "https://www.youtube.com/embed/Cm3Z1jEjHHc",
+      "idUser": 4,
+      "id": 23
+    },
+    {
+      "idMovie": 678512,
+      "poster_path": "/apxaWDCqjPrVc1v5HiKW2r10yiL.jpg",
+      "overview": "Narra la historia de Tim Ballard, un exagente de Seguridad Nacional de Estados Unidos que dejó su trabajo para dedicar su vida, sumergiéndose en el submundo del tráfico de personas a lo largo de hispanoamérica, a intentar salvar las vidas de cientos de niños.",
+      "keyYoutube": "https://www.youtube.com/embed/hyyyKcfJRGQ",
+      "idUser": 4,
+      "id": 24
+    },
+    {
       "idMovie": 346698,
       "poster_path": "/fNtqD4BTFj0Bgo9lyoAtmNFzxHN.jpg",
       "overview": "Barbie vive en Barbieland donde todo es ideal y lleno de música y color. Un buen día decide conocer el mundo real. Cuando el CEO de Mattel se entere, tratará de evitarlo a toda costa y devolver a Barbie a una caja.",
-      "keyYoutube": "https://www.youtube.com/embed/Y1IgAEejvqM",
-      "idUser": 2,
-      "id": 18
+      "keyYoutube": "",
+      "idUser": 4,
+      "id": 25
+    },
+    {
+      "idMovie": 299054,
+      "poster_path": "/2jmE7xH0R0dikmc8iplCPCit4MD.jpg",
+      "overview": "Cuarta entrega de la saga Los Mercenarios. El veterano mercenario Barney “Esquizo” Ross (Sylvester Stallone) y su equipo de estrellas, formado por los hombres más duros (Jason Statham, Dolph Lundgren, 50 Cent, Megan Fox…), afrontan un nuevo desafío, en una trama cargada de acción. Para superarlo y salir airosos, deberán recurrir a su ingenio, experiencia y a la fuerza bruta que los caracteriza.",
+      "keyYoutube": "https://www.youtube.com/embed/Cm3Z1jEjHHc",
+      "idUser": 4,
+      "id": 26
+    },
+    {
+      "idMovie": 507089,
+      "poster_path": "/t6RSJ1z8bDEYpk4fLwxfkXciUak.jpg",
+      "overview": "Un guardia de seguridad con problemas comienza a trabajar en Freddy Fazbear's Pizza. Mientras pasa su primera noche en el trabajo, se da cuenta de que el turno de noche en Freddy's no será tan fácil de superar.",
+      "keyYoutube": "https://www.youtube.com/embed/X4d_v-HyR4o",
+      "idUser": 3,
+      "id": 27
     }
   ]
 }
