@@ -4,6 +4,7 @@ import { Observable, catchError, map, of, switchMap, tap } from 'rxjs';
 import { Movie, PeliculasResponse } from '../InterfaceMovies';
 import { Video, Videos } from '../InterfaceVideo';
 import { IFav } from '../Interfaces';
+import { Fav } from '../Models';
 
 @Injectable({
   providedIn: 'root',
@@ -33,6 +34,8 @@ export class MoviesService {
   constructor(private http: HttpClient) {}
 
   ///TMDB FUNCIONES
+
+  ///Parametros
   get paramsNPlaying() {
     return {
       api_key: this.apikey,
@@ -73,6 +76,7 @@ export class MoviesService {
     };
   }
 
+  //Llamadas por filtros
   getPeliculas(): Observable<Movie[]> {
     console.log('cargando');
     if (this.cargando) {
@@ -170,6 +174,7 @@ export class MoviesService {
       );
   }
 
+  //Reset contador de paginas para que las vistas siempre arranquen del 1
   resetPageHome() {
     this.PageNPlaying = 1;
     this.PagePopular = 1;
@@ -178,14 +183,15 @@ export class MoviesService {
     this.PageSearch = 1;
   }
   ///JSON-SERVER FUNCIONES
-  getFavMovies(id: number): Observable<IFav[]> {
-    return this.http.get<IFav[]>(
+  getFavMovies(id: number): Observable<Fav[]> {
+    return this.http.get<Fav[]>(
       `${this.UrlJsonServer}/MovieFavs?idUser=${id}`
     );
   }
 
-  putFavMovie(FavMovie: IFav) {
-    return this.http.post<IFav[]>(`${this.UrlJsonServer}/MovieFavs`, FavMovie);
+  //Funciones Fav directas
+  putFavMovie(FavMovie: Fav) {
+    return this.http.post<Fav[]>(`${this.UrlJsonServer}/MovieFavs`, FavMovie);
   }
 
   removeFavMovie(idMovie: number, idUser: number): Observable<boolean> {
@@ -212,9 +218,9 @@ export class MoviesService {
     );
   }
 
-  getIdFavMovie(idMovie: number, idUser: number): Observable<IFav[]> {
+  getIdFavMovie(idMovie: number, idUser: number): Observable<Fav[]> {
     return this.http
-      .get<IFav[]>(
+      .get<Fav[]>(
         `${this.UrlJsonServer}/MovieFavs?idUser=${idUser}&idMovie=${idMovie}`
       )
       .pipe();

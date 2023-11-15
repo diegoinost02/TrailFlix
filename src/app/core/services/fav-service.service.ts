@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { MoviesService } from './movies.service';
-import { IFav } from '../Interfaces';
+import { Fav } from '../Models';
 
 @Injectable({
   providedIn: 'root'
@@ -9,11 +9,12 @@ export class FavServiceService {
 
   constructor(private apiMovie:MoviesService) { }
 
+  //Se modularizo una parte de las llamadas a fav y filtran informacion
 
-  addFavMovie(favMovies:any,movieToAdd:any):IFav[] 
+  addFavMovie(favMovies:any,movieToAdd:any):Fav[] 
   {
     let isDuplicated: boolean = favMovies.some(
-      (movie: IFav) => movie.idMovie === movieToAdd.idMovie
+      (movie: Fav) => movie.idMovie === movieToAdd.idMovie
     );
 
     if (!isDuplicated) {
@@ -27,7 +28,7 @@ export class FavServiceService {
     return favMovies;
   }
 
-  getFavMovies(favMovies:any,user:any):IFav[]
+  getFavMovies(favMovies:any,user:any):Fav[]
    {
     this.apiMovie.getFavMovies(user.id!).subscribe((apiMovies) => {
       favMovies = apiMovies;

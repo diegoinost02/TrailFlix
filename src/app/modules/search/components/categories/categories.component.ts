@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { elementAt } from 'rxjs';
 import { Movie } from 'src/app/core/InterfaceMovies';
 import { IFav } from 'src/app/core/Interfaces';
-import { Popup, User } from 'src/app/core/Models';
+import { Fav, Popup, User } from 'src/app/core/Models';
 import { FavServiceService } from 'src/app/core/services/fav-service.service';
 import { MoviesService } from 'src/app/core/services/movies.service';
 import { UsersService } from 'src/app/core/services/users.service';
@@ -30,15 +30,10 @@ export class CategoriesComponent implements OnInit {
   }
 
   genreMovie: any = [];
-  favMovies: any = [];
 
-  movieFav: IFav = {
-    idUser: 0,
-    idMovie: 0,
-    poster_path: '',
-    keyYoutube: '',
-    overview: '',
-  };
+  favMovies: Fav[] = [];
+
+  movieFav: Fav = new Fav();
 
   dataPopUp: Popup = {
     title: '',
@@ -134,7 +129,7 @@ export class CategoriesComponent implements OnInit {
 
   dialoMovieDetails(movie: Movie) {
     const dialogRef = this.dialog.open(MovieDetailsComponent, {
-      width: '50%',
+      width: 'auto',
       height: 'auto',
       data: movie,
       backdropClass: 'background-dialog',

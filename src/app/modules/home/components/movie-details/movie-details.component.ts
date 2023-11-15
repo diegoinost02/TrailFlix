@@ -5,8 +5,6 @@ import {
   MatDialogRef,
 } from '@angular/material/dialog';
 
-import { Movie } from 'src/app/core/InterfaceMovies';
-
 import { MoviesService } from 'src/app/core/services/movies.service';
 import { PipeUrlService } from '../pipe-url.service';
 import { MovieTrailerComponent } from '../movie-trailer/movie-trailer.component';
@@ -20,6 +18,8 @@ import { UsersService } from 'src/app/core/services/users.service';
   templateUrl: './movie-details.component.html',
   styleUrls: ['./movie-details.component.css'],
 })
+
+///ESTE COMPONENTE ES EL POPUP PRINCIPAL QUE SE VE EN TODAS LAS VISTAS
 export class MovieDetailsComponent implements OnInit {
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
@@ -50,13 +50,14 @@ export class MovieDetailsComponent implements OnInit {
 
   transformedlink: any;
 
-  favorite:boolean = false;
+  favorite: boolean = false;
 
   movie: IFav = {
     idMovie: this.data.id,
     poster_path: this.data.poster_path,
     overview: this.data.overview,
     keyYoutube: '',
+    title: this.data.title,
   };
 
   dataPopUp: Popup = {
@@ -68,21 +69,15 @@ export class MovieDetailsComponent implements OnInit {
     const user = this.userService.getCurrentUser();
     if (user) {
       user.subscribe((user: User[]) => {
-        this.isFavorite(user[0].id!)
+        this.isFavorite(user[0].id!);
       });
     }
   }
 
-  isFavorite(id:number)
-  {
-    this.api.getIdFavMovie(this.movie.idMovie!,id).subscribe((favMovie) =>
-    {
-      console.log(favMovie);
-
+  isFavorite(id: number) {
+    this.api.getIdFavMovie(this.movie.idMovie!, id).subscribe((favMovie) => {
       this.favorite = !!favMovie[0];
-    
-    }
-    )
+    });
   }
 
   getVideos() {
@@ -112,6 +107,7 @@ export class MovieDetailsComponent implements OnInit {
     });
   }
 
+  ///Dependiendo del dato que mando es la respuesta que obtengo en donde es llamado
   addFavorite() {
     this.dialogRef.close(this.movie);
   }

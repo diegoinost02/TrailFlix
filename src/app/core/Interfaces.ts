@@ -10,6 +10,7 @@ export interface IFav {
   id?: number | null;
   idUser?: number | null;
   idMovie?: number;
+  title: string;
   poster_path: string;
   keyYoutube: string;
   overview: string;

@@ -2,8 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { Movie } from 'src/app/core/InterfaceMovies';
-import { IFav } from 'src/app/core/Interfaces';
-import { Popup, User } from 'src/app/core/Models';
+import { Fav, Popup, User } from 'src/app/core/Models';
 import { FavServiceService } from 'src/app/core/services/fav-service.service';
 import { MoviesService } from 'src/app/core/services/movies.service';
 import { UsersService } from 'src/app/core/services/users.service';
@@ -22,15 +21,9 @@ export class MovieSearchedComponent implements OnInit, OnDestroy {
 
   search: string = '';
 
-  favMovies: any = [];
+  favMovies: Fav[] = [];
 
-  movieFav: IFav = {
-    idUser: 0,
-    idMovie: 0,
-    poster_path: '',
-    keyYoutube: '',
-    overview: '',
-  };
+  movieFav: Fav = new Fav();
 
   dataPopUp: Popup = {
     title: '',
@@ -42,7 +35,7 @@ export class MovieSearchedComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute,
     private dialog: MatDialog,
     private userService: UsersService,
-    private favSer:FavServiceService
+    private favSer: FavServiceService
   ) {
     this.search = this.route.snapshot.paramMap.get('movie')!;
   }
@@ -70,15 +63,12 @@ export class MovieSearchedComponent implements OnInit, OnDestroy {
   }
 
   appendSearch() {
-
-    if(this.search)
-    {
+    if (this.search) {
       this.movieSer.SearchMovies(this.search).subscribe((movies) => {
-      this.movies = [...this.movies, ...movies];
-      console.log(this.movies);
-    });
+        this.movies = [...this.movies, ...movies];
+        console.log(this.movies);
+      });
     }
-    
   }
   //USER ACTUAL
   loadData() {
@@ -90,26 +80,23 @@ export class MovieSearchedComponent implements OnInit, OnDestroy {
     }
   }
   //FAV MOVIES
-  addFavMovie()
-  {
-    this.favMovies =  this.favSer.addFavMovie(this.favMovies,this.movieFav);
+  addFavMovie() {
+    this.favMovies = this.favSer.addFavMovie(this.favMovies, this.movieFav);
   }
 
-  getFavMovies()
-  {
-    this.favMovies = this.favSer.getFavMovies(this.favMovies,this.user);
+  getFavMovies() {
+    this.favMovies = this.favSer.getFavMovies(this.favMovies, this.user);
   }
 
-  deleteFavMovie(idMovie: number | any, idUser: number)
-  {
-    this.favSer.deleteFavMovie(idMovie,idUser);
+  deleteFavMovie(idMovie: number | any, idUser: number) {
+    this.favSer.deleteFavMovie(idMovie, idUser);
 
-    this.getFavMovies()
+    this.getFavMovies();
   }
 
   dialoMovieDetails(movie: Movie) {
     const dialogRef = this.dialog.open(MovieDetailsComponent, {
-      width: '50%',
+      width: 'auto',
       height: 'auto',
       data: movie,
       backdropClass: 'background-dialog',

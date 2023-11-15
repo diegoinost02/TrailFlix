@@ -24,148 +24,31 @@
   ],
   "MovieFavs": [
     {
-      "idMovie": 575264,
-      "poster_path": "/83sGKvCv2T2CulYbd40Aeduc7n2.jpg",
-      "overview": "Ethan Hunt (Tom Cruise) y la IMF emprenden la misión más peligrosa a la que nunca se han enfrentado: rastrear una nueva y aterradora arma que amenaza a toda la humanidad antes de que caiga en las manos de un enemigo todopoderoso y misterioso.",
-      "keyYoutube": "https://www.youtube.com/embed/HurjfO_TDlQ",
-      "idUser": 3,
-      "id": 1
-    },
-    {
-      "idMovie": 609681,
-      "poster_path": "/vpuuFM032yiX8tox4L84Wl9MGjG.jpg",
-      "overview": "Cuando sus obligaciones la envían a un agujero de gusano vinculado a un revolucionario kree, los poderes de Carol Danvers, la capitana Marvel, se entremezclan con los de Kamala Khan, también conocida como la Sra. Marvel y la sobrina de Carol, ahora astronauta de S.A.B.E.R., Monica Rambeau. Juntas, deberán salvar el universo como \"The Marvels\".",
-      "keyYoutube": "https://www.youtube.com/embed/uwmDH12MAA4",
-      "idUser": 3,
-      "id": 3
-    },
-    {
       "idMovie": 299054,
       "poster_path": "/2jmE7xH0R0dikmc8iplCPCit4MD.jpg",
       "overview": "Cuarta entrega de la saga Los Mercenarios. El veterano mercenario Barney “Esquizo” Ross (Sylvester Stallone) y su equipo de estrellas, formado por los hombres más duros (Jason Statham, Dolph Lundgren, 50 Cent, Megan Fox…), afrontan un nuevo desafío, en una trama cargada de acción. Para superarlo y salir airosos, deberán recurrir a su ingenio, experiencia y a la fuerza bruta que los caracteriza.",
       "keyYoutube": "https://www.youtube.com/embed/Cm3Z1jEjHHc",
-      "idUser": 3,
-      "id": 4
+      "title": "Los mercenarios 4",
+      "idUser": 2,
+      "id": 1
     },
     {
-      "idMovie": 968051,
-      "poster_path": "/x0ryPlzZjpOojEAuGrre2lFuBv6.jpg",
-      "overview": "En 1956 en Francia, un sacerdote es asesinado y parece que un mal se está extendiendo. La hermana Irene una vez más se encuentra cara a cara con una fuerza demoníaca.",
-      "keyYoutube": "https://www.youtube.com/embed/QF-oyCwaArU",
+      "idMovie": 385687,
+      "poster_path": "/qDRrP4NATGTWH8ORJV6T0BeoIhQ.jpg",
+      "overview": "Dom Toretto y su familia se convierten en el objetivo del vengativo hijo del capo de las drogas Hernán Reyes.",
+      "keyYoutube": "https://www.youtube.com/embed/eoOaKN4qCKw",
+      "title": "Fast & Furious X",
       "idUser": 2,
-      "id": 11
-    },
-    {
-      "idMovie": 762430,
-      "poster_path": "/mhLYcyxuhb82ttYDEU5DM8b3Hy3.jpg",
-      "overview": "Un ejecutivo de un banco recibe, mientras conduce a sus hijos a la escuela, una amenaza de bomba dentro de su auto, el cual explotará si se detienen o salen del vehículo antes de conseguir una elevada suma de dinero. Remake de la película española de 2015 \"El Desconocido\".",
-      "keyYoutube": "https://www.youtube.com/embed/Sxyzdo-RBKc",
-      "idUser": 2,
-      "id": 12
+      "id": 2
     },
     {
       "idMovie": 951491,
       "poster_path": "/epN0x9JTf3esk1FO8DWkhlE4Ax5.jpg",
       "overview": "Entre los acontecimientos de 'Saw' y 'Saw II', un enfermo y desesperado John Kramer viaja a México para someterse a un procedimiento médico arriesgado y experimental con la esperanza de encontrar una cura milagrosa para su cáncer, sólo para descubrir que toda la operación es una estafa para robar a  los más vulnerables. Armado con un nuevo propósito, el infame asesino en serie regresa a su trabajo, dándole la vuelta a los estafadores en su forma visceral característica a través de trampas tortuosas, trastornadas e ingeniosas.",
       "keyYoutube": "https://www.youtube.com/embed/t3PzUo4P21c",
+      "title": "Saw X",
       "idUser": 2,
-      "id": 13
-    },
-    {
-      "idMovie": 678512,
-      "poster_path": "/apxaWDCqjPrVc1v5HiKW2r10yiL.jpg",
-      "overview": "Narra la historia de Tim Ballard, un exagente de Seguridad Nacional de Estados Unidos que dejó su trabajo para dedicar su vida, sumergiéndose en el submundo del tráfico de personas a lo largo de hispanoamérica, a intentar salvar las vidas de cientos de niños.",
-      "keyYoutube": "https://www.youtube.com/embed/hyyyKcfJRGQ",
-      "idUser": 3,
-      "id": 14
-    },
-    {
-      "idMovie": 91314,
-      "poster_path": "/owqV5Qo2DMMomfB1fS6xYWv3yEh.jpg",
-      "overview": "Han pasado 4 años desde la tragedia de Chicago y la humanidad sigue reparando los destrozos, pero tanto los Autobots como los Decepticons han desaparecido de la faz de la Tierra. Ahora el Gobierno de los Estados Unidos está utilizando la tecnología rescatada en el asedio de Chicago para desarrollar sus propios Transformers. Al frente del proyecto está Joshua Joyce, un arrogante diseñador que piensa que los Autobots son \"basura tecnológica\" y se cree capaz de fabricar unos robots infinitamente más avanzados. Mientras tanto, Cade Yeager, un mécánico inventor, encuentra un Marmon semi-trailer. Al intentar repararlo, descubre que el camión no solo era un Transformer, sino también el mismísimo Optimus Prime, líder de los Autobots. Lo que Cade ignora son las consecuencias que pueden derivarse de este hallazgo.",
-      "keyYoutube": "https://www.youtube.com/embed/S30VkLn5a2o",
-      "idUser": 2,
-      "id": 16
-    },
-    {
-      "idMovie": 346698,
-      "poster_path": "/fNtqD4BTFj0Bgo9lyoAtmNFzxHN.jpg",
-      "overview": "Barbie vive en Barbieland donde todo es ideal y lleno de música y color. Un buen día decide conocer el mundo real. Cuando el CEO de Mattel se entere, tratará de evitarlo a toda costa y devolver a Barbie a una caja.",
-      "keyYoutube": "https://www.youtube.com/embed/Y1IgAEejvqM",
-      "idUser": null,
-      "id": 17
-    },
-    {
-      "idMovie": 507089,
-      "poster_path": "/t6RSJ1z8bDEYpk4fLwxfkXciUak.jpg",
-      "overview": "Un guardia de seguridad con problemas comienza a trabajar en Freddy Fazbear's Pizza. Mientras pasa su primera noche en el trabajo, se da cuenta de que el turno de noche en Freddy's no será tan fácil de superar.",
-      "keyYoutube": "https://www.youtube.com/embed/X4d_v-HyR4o",
-      "idUser": 4,
-      "id": 20
-    },
-    {
-      "idMovie": 575264,
-      "poster_path": "/83sGKvCv2T2CulYbd40Aeduc7n2.jpg",
-      "overview": "Ethan Hunt (Tom Cruise) y la IMF emprenden la misión más peligrosa a la que nunca se han enfrentado: rastrear una nueva y aterradora arma que amenaza a toda la humanidad antes de que caiga en las manos de un enemigo todopoderoso y misterioso.",
-      "keyYoutube": "https://www.youtube.com/embed/HurjfO_TDlQ",
-      "idUser": 4,
-      "id": 22
-    },
-    {
-      "idMovie": 299054,
-      "poster_path": "/2jmE7xH0R0dikmc8iplCPCit4MD.jpg",
-      "overview": "Cuarta entrega de la saga Los Mercenarios. El veterano mercenario Barney “Esquizo” Ross (Sylvester Stallone) y su equipo de estrellas, formado por los hombres más duros (Jason Statham, Dolph Lundgren, 50 Cent, Megan Fox…), afrontan un nuevo desafío, en una trama cargada de acción. Para superarlo y salir airosos, deberán recurrir a su ingenio, experiencia y a la fuerza bruta que los caracteriza.",
-      "keyYoutube": "https://www.youtube.com/embed/Cm3Z1jEjHHc",
-      "idUser": 4,
-      "id": 23
-    },
-    {
-      "idMovie": 678512,
-      "poster_path": "/apxaWDCqjPrVc1v5HiKW2r10yiL.jpg",
-      "overview": "Narra la historia de Tim Ballard, un exagente de Seguridad Nacional de Estados Unidos que dejó su trabajo para dedicar su vida, sumergiéndose en el submundo del tráfico de personas a lo largo de hispanoamérica, a intentar salvar las vidas de cientos de niños.",
-      "keyYoutube": "https://www.youtube.com/embed/hyyyKcfJRGQ",
-      "idUser": 4,
-      "id": 24
-    },
-    {
-      "idMovie": 346698,
-      "poster_path": "/fNtqD4BTFj0Bgo9lyoAtmNFzxHN.jpg",
-      "overview": "Barbie vive en Barbieland donde todo es ideal y lleno de música y color. Un buen día decide conocer el mundo real. Cuando el CEO de Mattel se entere, tratará de evitarlo a toda costa y devolver a Barbie a una caja.",
-      "keyYoutube": "",
-      "idUser": 4,
-      "id": 25
-    },
-    {
-      "idMovie": 299054,
-      "poster_path": "/2jmE7xH0R0dikmc8iplCPCit4MD.jpg",
-      "overview": "Cuarta entrega de la saga Los Mercenarios. El veterano mercenario Barney “Esquizo” Ross (Sylvester Stallone) y su equipo de estrellas, formado por los hombres más duros (Jason Statham, Dolph Lundgren, 50 Cent, Megan Fox…), afrontan un nuevo desafío, en una trama cargada de acción. Para superarlo y salir airosos, deberán recurrir a su ingenio, experiencia y a la fuerza bruta que los caracteriza.",
-      "keyYoutube": "https://www.youtube.com/embed/Cm3Z1jEjHHc",
-      "idUser": 4,
-      "id": 26
-    },
-    {
-      "idMovie": 507089,
-      "poster_path": "/t6RSJ1z8bDEYpk4fLwxfkXciUak.jpg",
-      "overview": "Un guardia de seguridad con problemas comienza a trabajar en Freddy Fazbear's Pizza. Mientras pasa su primera noche en el trabajo, se da cuenta de que el turno de noche en Freddy's no será tan fácil de superar.",
-      "keyYoutube": "https://www.youtube.com/embed/X4d_v-HyR4o",
-      "idUser": 3,
-      "id": 27
-    },
-    {
-      "idMovie": 872585,
-      "poster_path": "/ncKCQVXgk4BcQV6XbvesgZ2zLvZ.jpg",
-      "overview": "Película sobre el físico J. Robert Oppenheimer y su papel como desarrollador de la bomba atómica. Basada en el libro 'American Prometheus: The Triumph and Tragedy of J. Robert Oppenheimer' de Kai Bird y Martin J. Sherwin.",
-      "keyYoutube": "https://www.youtube.com/embed/uYPbbksJxIg",
-      "idUser": 2,
-      "id": 28
-    },
-    {
-      "idMovie": 872585,
-      "poster_path": "/ncKCQVXgk4BcQV6XbvesgZ2zLvZ.jpg",
-      "overview": "Película sobre el físico J. Robert Oppenheimer y su papel como desarrollador de la bomba atómica. Basada en el libro 'American Prometheus: The Triumph and Tragedy of J. Robert Oppenheimer' de Kai Bird y Martin J. Sherwin.",
-      "keyYoutube": "https://www.youtube.com/embed/uYPbbksJxIg",
-      "idUser": 3,
-      "id": 29
+      "id": 3
     }
   ]
 }
