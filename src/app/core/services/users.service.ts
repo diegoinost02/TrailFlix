@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class UsersService {
 
   // private baseUrl = 'http://localhost:3000';
-  private baseUrl = 'https://json-server-trail-f-r2ba25wx5-diego-inostrozas-projects.vercel.app';
+  private baseUrl = 'https://json-server-trail-f-lix.vercel.app';
 
   constructor(private http: HttpClient, private router: Router) { }
 
