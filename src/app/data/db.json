@@ -158,6 +158,14 @@
       "keyYoutube": "https://www.youtube.com/embed/uYPbbksJxIg",
       "idUser": 2,
       "id": 28
+    },
+    {
+      "idMovie": 872585,
+      "poster_path": "/ncKCQVXgk4BcQV6XbvesgZ2zLvZ.jpg",
+      "overview": "Película sobre el físico J. Robert Oppenheimer y su papel como desarrollador de la bomba atómica. Basada en el libro 'American Prometheus: The Triumph and Tragedy of J. Robert Oppenheimer' de Kai Bird y Martin J. Sherwin.",
+      "keyYoutube": "https://www.youtube.com/embed/uYPbbksJxIg",
+      "idUser": 3,
+      "id": 29
     }
   ]
 }

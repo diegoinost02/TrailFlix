@@ -1,0 +1,8 @@
+.container{
+    width: 800px;
+}
+@media screen and (max-width: 930px) {
+    .container{
+        width: auto;
+    }
+}
