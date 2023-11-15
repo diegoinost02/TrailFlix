@@ -29,8 +29,8 @@ export class MoviesService {
   private language: string = 'es-ES';
 
   ///JSON-SERVER
-  // private UrlJsonServer: string = 'http://localhost:3000';
-  private UrlJsonServer = 'https://json-server-trail-f-lix.vercel.app';
+  private UrlJsonServer: string = 'http://localhost:3000';
+  // private UrlJsonServer = 'https://json-server-trail-f-lix.vercel.app';
 
 
   constructor(private http: HttpClient) {}
