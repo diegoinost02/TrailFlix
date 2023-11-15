@@ -184,15 +184,15 @@ export class RegisterComponent implements OnInit{
   }
 
   // Genero un token de autenticación y hago el respectivo logueo de la nueva cuenta registrada
-  login() {
+  async login() {
     this.usersService.getUserToAuth(this.user).subscribe({
 
-      next: (users: User[]) => {
+      next: async (users: User[]) => {
         if (users.length > 0) {
           console.log("User verificado");
 
           const token = this.usersService.generateToken(users[0]);
-          this.usersService.setCurrentUser(token);
+          await this.usersService.setCurrentUser(token);
 
           this.router.navigate(["/home"]);
         }

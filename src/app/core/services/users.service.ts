@@ -34,10 +34,14 @@ export class UsersService {
     return 'Bearer' + user.id;
   }
 
-  public setCurrentUser(token: string): void {
+  // public setCurrentUser(token: string): void {
+  //   localStorage.setItem('token', token)
+  // }
+  public async setCurrentUser(token: string): Promise<void> {
     localStorage.setItem('token', token)
+  
+    return Promise.resolve()
   }
-
   public getCurrentUser(): Observable<User[]> | null {
     const token = localStorage.getItem('token');
     if (token) {
