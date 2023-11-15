@@ -62,9 +62,11 @@ export class MovieGridComponent implements OnInit, OnDestroy {
   }
 
   getMovies() {
+    //isloading = true
     this.movieSer.getPeliculasTrendig().subscribe((movies) => {
       this.movies = movies;
       console.log(this.movies);
+    //isloading = false
     });
   }
 

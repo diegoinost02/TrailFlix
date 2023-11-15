@@ -12,7 +12,8 @@ import { PipeUrlService } from '../pipe-url.service';
 import { MovieTrailerComponent } from '../movie-trailer/movie-trailer.component';
 import { IFav } from 'src/app/core/Interfaces';
 import { Video } from 'src/app/core/InterfaceVideo';
-import { Popup } from 'src/app/core/Models';
+import { Popup, User } from 'src/app/core/Models';
+import { UsersService } from 'src/app/core/services/users.service';
 
 @Component({
   selector: 'app-movie-details',
@@ -25,7 +26,8 @@ export class MovieDetailsComponent implements OnInit {
     private dialogRef: MatDialogRef<MovieDetailsComponent>,
     private api: MoviesService,
     private pipeUrl: PipeUrlService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private userService: UsersService
   ) {}
   ngOnInit(): void {
     if (this.data.keyYoutube !== undefined) {
@@ -35,7 +37,9 @@ export class MovieDetailsComponent implements OnInit {
     }
     this.movie.poster_path = this.data.poster_path;
     this.movie.overview = this.data.overview;
+
     this.getVideos();
+    this.loadData();
   }
 
   videosArray: any = [];
@@ -45,6 +49,8 @@ export class MovieDetailsComponent implements OnInit {
   youtubeLink: string = '';
 
   transformedlink: any;
+
+  favorite:boolean = false;
 
   movie: IFav = {
     idMovie: this.data.id,
@@ -57,6 +63,27 @@ export class MovieDetailsComponent implements OnInit {
     title: '',
     body: '',
   };
+
+  loadData() {
+    const user = this.userService.getCurrentUser();
+    if (user) {
+      user.subscribe((user: User[]) => {
+        this.isFavorite(user[0].id!)
+      });
+    }
+  }
+
+  isFavorite(id:number)
+  {
+    this.api.getIdFavMovie(this.movie.idMovie!,id).subscribe((favMovie) =>
+    {
+      console.log(favMovie);
+
+      this.favorite = !!favMovie[0];
+    
+    }
+    )
+  }
 
   getVideos() {
     this.api.getVideosIdMovie(this.movie.idMovie!).subscribe((videos) => {

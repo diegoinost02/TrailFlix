@@ -100,14 +100,6 @@
       "poster_path": "/t6RSJ1z8bDEYpk4fLwxfkXciUak.jpg",
       "overview": "Un guardia de seguridad con problemas comienza a trabajar en Freddy Fazbear's Pizza. Mientras pasa su primera noche en el trabajo, se da cuenta de que el turno de noche en Freddy's no será tan fácil de superar.",
       "keyYoutube": "https://www.youtube.com/embed/X4d_v-HyR4o",
-      "idUser": 2,
-      "id": 19
-    },
-    {
-      "idMovie": 507089,
-      "poster_path": "/t6RSJ1z8bDEYpk4fLwxfkXciUak.jpg",
-      "overview": "Un guardia de seguridad con problemas comienza a trabajar en Freddy Fazbear's Pizza. Mientras pasa su primera noche en el trabajo, se da cuenta de que el turno de noche en Freddy's no será tan fácil de superar.",
-      "keyYoutube": "https://www.youtube.com/embed/X4d_v-HyR4o",
       "idUser": 4,
       "id": 20
     },
@@ -158,6 +150,14 @@
       "keyYoutube": "https://www.youtube.com/embed/X4d_v-HyR4o",
       "idUser": 3,
       "id": 27
+    },
+    {
+      "idMovie": 872585,
+      "poster_path": "/ncKCQVXgk4BcQV6XbvesgZ2zLvZ.jpg",
+      "overview": "Película sobre el físico J. Robert Oppenheimer y su papel como desarrollador de la bomba atómica. Basada en el libro 'American Prometheus: The Triumph and Tragedy of J. Robert Oppenheimer' de Kai Bird y Martin J. Sherwin.",
+      "keyYoutube": "https://www.youtube.com/embed/uYPbbksJxIg",
+      "idUser": 2,
+      "id": 28
     }
   ]
 }

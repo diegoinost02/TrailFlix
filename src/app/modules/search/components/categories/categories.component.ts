@@ -12,26 +12,25 @@ import { MovieDetailsComponent } from 'src/app/modules/home/components/movie-det
 @Component({
   selector: 'app-categories',
   templateUrl: './categories.component.html',
-  styleUrls: ['./categories.component.css']
+  styleUrls: ['./categories.component.css'],
 })
 export class CategoriesComponent implements OnInit {
   user: User = new User();
 
-
-
-  constructor( private apiMovie : MoviesService, private userService:UsersService, private dialog: MatDialog, private favSer:FavServiceService)
-  {
-
-  }
+  constructor(
+    private apiMovie: MoviesService,
+    private userService: UsersService,
+    private dialog: MatDialog,
+    private favSer: FavServiceService
+  ) {}
   ngOnInit(): void {
     this.loadData();
 
     // this.genreAction();
   }
 
-  genreMovie:any = [];
-  favMovies:any = [];
-
+  genreMovie: any = [];
+  favMovies: any = [];
 
   movieFav: IFav = {
     idUser: 0,
@@ -46,93 +45,67 @@ export class CategoriesComponent implements OnInit {
     body: '',
   };
 
-  genreClicked:boolean = false;
+  genreClicked: boolean = false;
 
-  genreAction ()
-  {
-    this.apiMovie.genreType = `28`
+  genreAction() {
+    this.apiMovie.genreType = `28`;
 
-  
-    this.genreMovie = this.apiMovie.getMoviesbygenre().subscribe((movies) =>
-    {
+    this.genreMovie = this.apiMovie.getMoviesbygenre().subscribe((movies) => {
       this.genreMovie = movies;
       console.log(this.genreMovie);
 
       this.genreClicked = true;
-
-    })
+    });
   }
-  genreAdventure ()
-  {
+  genreAdventure() {
+    this.apiMovie.genreType = `12`;
 
-
-    this.apiMovie.genreType = `12`
-
-    this.genreMovie = this.apiMovie.getMoviesbygenre().subscribe((movies) =>
-    {
+    this.genreMovie = this.apiMovie.getMoviesbygenre().subscribe((movies) => {
       this.genreMovie = movies;
       console.log(this.genreMovie);
 
       this.genreClicked = true;
-
-
-    })
+    });
   }
-  genreComedy ()
-  {
-    this.apiMovie.genreType = `35`
+  genreComedy() {
+    this.apiMovie.genreType = `35`;
 
-    this.genreMovie = this.apiMovie.getMoviesbygenre().subscribe((movies) =>
-    {
+    this.genreMovie = this.apiMovie.getMoviesbygenre().subscribe((movies) => {
       this.genreMovie = movies;
       console.log(this.genreMovie);
-     
+
       this.genreClicked = true;
-
-
-    })
+    });
   }
-  genreSuspense ()
-  {
-    this.apiMovie.genreType = `53`
+  genreSuspense() {
+    this.apiMovie.genreType = `53`;
 
-    this.genreMovie = this.apiMovie.getMoviesbygenre().subscribe((movies) =>
-    {
+    this.genreMovie = this.apiMovie.getMoviesbygenre().subscribe((movies) => {
       this.genreMovie = movies;
       console.log(this.genreMovie);
-      
+
       this.genreClicked = true;
-
-
-    })
+    });
   }
-  genreDrama ()
-  {
-    this.apiMovie.genreType = `18`
+  genreDrama() {
+    this.apiMovie.genreType = `18`;
 
-    this.genreMovie = this.apiMovie.getMoviesbygenre().subscribe((movies) =>
-    {
+    this.genreMovie = this.apiMovie.getMoviesbygenre().subscribe((movies) => {
       this.genreMovie = movies;
       console.log(this.genreMovie);
-      
+
       this.genreClicked = true;
-
-
-    })
+    });
   }
-  genreFamily ()
-  {
-    this.apiMovie.genreType = `14`
+  genreFamily() {
+    this.apiMovie.genreType = `14`;
 
-    this.genreMovie = this.apiMovie.getMoviesbygenre().subscribe((movies) =>
-    {
+    this.genreMovie = this.apiMovie.getMoviesbygenre().subscribe((movies) => {
       this.genreMovie = movies;
       console.log(this.genreMovie);
 
       this.genreClicked = true;
-
-
-    })
+    });
   }
 
   loadData() {
@@ -144,61 +117,24 @@ export class CategoriesComponent implements OnInit {
     }
   }
   //FAV MOVIES
-  
 
-  // addFavMovie() {
-  //   let isDuplicated: boolean = this.favMovies.some(
-  //     (movie: IFav) => movie.idMovie === this.movieFav.idMovie
-  //   );
-
-  //   if (!isDuplicated) {
-  //     this.apiMovie.putFavMovie(this.movieFav).subscribe((updatedFavMovies) => {
-  //       this.favMovies.push(updatedFavMovies);
-  //     });
-  //     console.log('agregado a favoritos');
-  //   } else {
-  //     console.log('Ya existe en la lista de fav');
-  //   }
-  // }
-
-  addFavMovie()
-  {
-    this.favMovies =  this.favSer.addFavMovie(this.favMovies,this.movieFav);
+  addFavMovie() {
+    this.favMovies = this.favSer.addFavMovie(this.favMovies, this.movieFav);
   }
 
-  // getFavMovies() {
-  //   this.apiMovie.getFavMovies(this.user.id!).subscribe((favMovies) => {
-  //     this.favMovies = favMovies;
-  //     console.log(this.favMovies);
-  //   });
-  // }
-
-  getFavMovies()
-  {
-    this.favMovies = this.favSer.getFavMovies(this.favMovies,this.user);
+  getFavMovies() {
+    this.favMovies = this.favSer.getFavMovies(this.favMovies, this.user);
   }
 
-  // deleteFavMovie(idMovie: number | any, idUser: number) {
-  //   this.apiMovie.removeFavMovie(idMovie, idUser).subscribe((data: any) => {
-  //     this.favMovies = this.favMovies.filter(
-  //       (movie: IFav) => movie.id !== idMovie
-  //     );
+  deleteFavMovie(idMovie: number | any, idUser: number) {
+    this.favSer.deleteFavMovie(idMovie, idUser);
 
-  //     console.log('Se elimino de la db', data);
-  //     this.getFavMovies();
-  //   });
-  // }
-
-  deleteFavMovie(idMovie: number | any, idUser: number)
-  {
-    this.favSer.deleteFavMovie(idMovie,idUser);
-
-    this.getFavMovies()
+    this.getFavMovies();
   }
 
   dialoMovieDetails(movie: Movie) {
     const dialogRef = this.dialog.open(MovieDetailsComponent, {
-      width: '40%',
+      width: '50%',
       height: 'auto',
       data: movie,
       backdropClass: 'background-dialog',
@@ -228,8 +164,4 @@ export class CategoriesComponent implements OnInit {
       }
     });
   }
-
-
-
 }
-

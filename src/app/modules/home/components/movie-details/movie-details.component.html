@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-1">
         <button class="btn btn-outline-danger" (click)="closeDialog()">
-          X
+          <i style="font-size: 1.5rem" class="bi bi-x-circle"></i>
         </button>
       </div>
 
@@ -32,24 +32,28 @@
 
 <mat-dialog-actions style="background-color: black; display: flex; width: 100%">
   <button
-    (click)="addFavorite()"
-    class="btn btn-outline-success"
-    style="flex: 1; margin-right: 5px"
+    *ngIf="favorite; else notFavorite"
+    (click)="removeFavorites()"
+    class="btn btn-outline-danger"
+    style="flex: 1"
   >
-    Agregar A favoritos
+    <i style="font-size: 2rem" class="bi bi-heartbreak"></i>
   </button>
+  <ng-template #notFavorite>
+    <button
+      (click)="addFavorite()"
+      class="btn btn-outline-success"
+      style="flex: 1; margin-right: 5px"
+    >
+      <i style="font-size: 2rem" class="bi bi-heart"></i>
+    </button>
+  </ng-template>
+
   <button
     (click)="dialogTrailer(transformedlink)"
     class="btn btn-outline-primary"
     style="flex: 1; margin-right: 5px"
   >
-    Trailer
-  </button>
-  <button
-    (click)="removeFavorites()"
-    class="btn btn-outline-danger"
-    style="flex: 1"
-  >
-    Eliminar de Favoritos
+    <i style="font-size: 2rem" class="bi bi-play-circle"></i>
   </button>
 </mat-dialog-actions>
