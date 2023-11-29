@@ -51,15 +51,6 @@
       "id": 3
     },
     {
-      "idMovie": 872585,
-      "poster_path": "/ncKCQVXgk4BcQV6XbvesgZ2zLvZ.jpg",
-      "overview": "Película sobre el físico J. Robert Oppenheimer y su papel como desarrollador de la bomba atómica. Basada en el libro 'American Prometheus: The Triumph and Tragedy of J. Robert Oppenheimer' de Kai Bird y Martin J. Sherwin.",
-      "keyYoutube": "https://www.youtube.com/embed/uYPbbksJxIg",
-      "title": "Oppenheimer",
-      "idUser": 3,
-      "id": 4
-    },
-    {
       "idMovie": 507089,
       "poster_path": "/t6RSJ1z8bDEYpk4fLwxfkXciUak.jpg",
       "overview": "Un guardia de seguridad con problemas comienza a trabajar en Freddy Fazbear's Pizza. Mientras pasa su primera noche en el trabajo, se da cuenta de que el turno de noche en Freddy's no será tan fácil de superar.",
@@ -78,15 +69,6 @@
       "id": 6
     },
     {
-      "idMovie": 299054,
-      "poster_path": "/2jmE7xH0R0dikmc8iplCPCit4MD.jpg",
-      "overview": "Cuarta entrega de la saga Los Mercenarios. El veterano mercenario Barney “Esquizo” Ross (Sylvester Stallone) y su equipo de estrellas, formado por los hombres más duros (Jason Statham, Dolph Lundgren, 50 Cent, Megan Fox…), afrontan un nuevo desafío, en una trama cargada de acción. Para superarlo y salir airosos, deberán recurrir a su ingenio, experiencia y a la fuerza bruta que los caracteriza.",
-      "keyYoutube": "https://www.youtube.com/embed/Cm3Z1jEjHHc",
-      "title": "Los mercenarios 4",
-      "idUser": 3,
-      "id": 7
-    },
-    {
       "idMovie": 823395,
       "poster_path": "/d7APW2AfqUxIkEXZWllaWQRYixD.jpg",
       "overview": "Un viejo panadero se ve obligado a pasar de contrabando una barra de pan gigante llena de droga para salvar la vida de su hijo.",
@@ -94,6 +76,15 @@
       "title": "The Baker",
       "idUser": 3,
       "id": 8
+    },
+    {
+      "idMovie": 299054,
+      "poster_path": "/2jmE7xH0R0dikmc8iplCPCit4MD.jpg",
+      "overview": "Cuarta entrega de la saga Los Mercenarios. El veterano mercenario Barney “Esquizo” Ross (Sylvester Stallone) y su equipo de estrellas, formado por los hombres más duros (Jason Statham, Dolph Lundgren, 50 Cent, Megan Fox…), afrontan un nuevo desafío, en una trama cargada de acción. Para superarlo y salir airosos, deberán recurrir a su ingenio, experiencia y a la fuerza bruta que los caracteriza.",
+      "keyYoutube": "https://www.youtube.com/embed/Cm3Z1jEjHHc",
+      "title": "Los mercenarios 4",
+      "idUser": 3,
+      "id": 9
     }
   ]
 }
